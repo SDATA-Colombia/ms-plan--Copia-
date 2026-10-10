@@ -1,0 +1,168 @@
+syntax = "proto3";
+
+package plan.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/SDATA-Colombia/shared-go-proto/plan/v1";
+
+// -------------------------------------------------------------------
+// Plan Entity message
+// -------------------------------------------------------------------
+
+message PlanEntity {
+  string id = 1;
+  string plan_id_company = 2;
+  string plan_accent_color = 3;
+  string plan_accent_text_color = 4;
+  string plan_title = 5;
+  string plan_subtitle = 6;
+  string plan_description_tinymce = 7;
+  string plan_type = 8;
+  string plan_currency_price = 9;
+  string plan_menu = 10;
+  string plan_description_items = 11;
+  
+  int32 plan_days = 12;
+  int32 plan_offices = 13;
+  int32 plan_users = 14;
+  int32 plan_total_sales = 15;
+  
+  double plan_price = 16;
+  
+  bool plan_featured = 17;
+  bool plan_custom = 18;
+  bool active_plan = 19;
+
+  google.protobuf.Timestamp created_at = 20;
+  google.protobuf.Timestamp updated_at = 21;
+  google.protobuf.Timestamp deleted_at = 22;
+}
+
+// -------------------------------------------------------------------
+// Request / Response
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// CreatePlan
+// -------------------------------------------------------------------
+
+message CreatePlanReq {
+  PlanEntity data = 1;
+}
+
+message CreatePlanRes {
+  bool success = 1;
+  string message = 2;
+  PlanEntity data = 3;
+}
+
+// -------------------------------------------------------------------
+// GetPlan
+// -------------------------------------------------------------------
+
+message GetPlanReq {
+  string id = 1;
+}
+
+message GetPlanRes {
+  bool success = 1;
+  string message = 2;
+  PlanEntity data = 3;
+}
+
+// -------------------------------------------------------------------
+// GetPlanCompany
+// -------------------------------------------------------------------
+
+message GetPlanCompanyReq {
+  string plan_id_company = 1;
+}
+
+message GetPlanCompanyRes {
+  bool success = 1;
+  string message = 2;
+  PlanEntity data = 3;
+}
+
+// -------------------------------------------------------------------
+// ListPlan
+// -------------------------------------------------------------------
+
+message ListPlanReq {
+  int32 page = 1;
+  int32 limit = 2;
+  string search = 3;
+}
+
+message ListPlanRes {
+  bool success = 1;
+  string message = 2;
+  repeated PlanEntity data = 3;
+  int64 total = 4;
+}
+
+// -------------------------------------------------------------------
+// UpdatePlan
+// -------------------------------------------------------------------
+
+message UpdatePlanReq {
+  string id = 1;
+  PlanEntity data = 2;
+}
+
+message UpdatePlanRes {
+  bool success = 1;
+  string message = 2;
+  PlanEntity data = 3;
+}
+
+// -------------------------------------------------------------------
+// DeletePlan
+// -------------------------------------------------------------------
+
+message DeletePlanReq {
+  string id = 1;
+}
+
+message DeletePlanRes {
+  bool success = 1;
+  string message = 2;
+}
+
+// -------------------------------------------------------------------
+// DeleteFeaturePlan
+// -------------------------------------------------------------------
+
+message DeleteFeaturePlanReq {
+  int32 id = 1;
+  string plan_id = 2;
+}
+
+message DeleteFeaturePlanRes {
+  bool success = 1;
+  string message = 2;
+  PlanEntity data = 3;
+}
+
+// -------------------------------------------------------------------
+// Service gRPC
+// -------------------------------------------------------------------
+
+service PlanService {
+
+  rpc CreatePlan(CreatePlanReq) returns (CreatePlanRes);
+
+  rpc GetPlan(GetPlanReq) returns (GetPlanRes);
+
+  rpc GetPlanCompany(GetPlanCompanyReq) returns (GetPlanCompanyRes);
+
+  rpc ListPlan(ListPlanReq) returns (ListPlanRes);
+
+  rpc UpdatePlan(UpdatePlanReq) returns (UpdatePlanRes);
+
+  rpc DeletePlan(DeletePlanReq) returns (DeletePlanRes);
+
+  rpc DeleteFeaturePlan(DeleteFeaturePlanReq) returns (DeleteFeaturePlanRes);
+
+}

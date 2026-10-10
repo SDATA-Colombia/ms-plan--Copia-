@@ -1,0 +1,3322 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>config: Go Coverage Report</title>
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">github.com/SDATA-Colombia/ms-plan/internal/config/config.go (66.7%)</option>
+				
+				<option value="file1">github.com/SDATA-Colombia/ms-plan/internal/consumer/plan_created.go (0.0%)</option>
+				
+				<option value="file2">github.com/SDATA-Colombia/ms-plan/internal/consumer/register.go (0.0%)</option>
+				
+				<option value="file3">github.com/SDATA-Colombia/ms-plan/internal/controller/base.go (100.0%)</option>
+				
+				<option value="file4">github.com/SDATA-Colombia/ms-plan/internal/controller/c_create.go (100.0%)</option>
+				
+				<option value="file5">github.com/SDATA-Colombia/ms-plan/internal/controller/c_delete.go (91.7%)</option>
+				
+				<option value="file6">github.com/SDATA-Colombia/ms-plan/internal/controller/c_read.go (84.2%)</option>
+				
+				<option value="file7">github.com/SDATA-Colombia/ms-plan/internal/controller/c_update.go (93.3%)</option>
+				
+				<option value="file8">github.com/SDATA-Colombia/ms-plan/internal/controller/register.go (100.0%)</option>
+				
+				<option value="file9">github.com/SDATA-Colombia/ms-plan/internal/mapper/mapper.go (97.3%)</option>
+				
+				<option value="file10">github.com/SDATA-Colombia/ms-plan/internal/repository/base.go (74.5%)</option>
+				
+				<option value="file11">github.com/SDATA-Colombia/ms-plan/internal/service/base.go (88.2%)</option>
+				
+				<option value="file12">github.com/SDATA-Colombia/ms-plan/internal/service/helpers.go (91.7%)</option>
+				
+				<option value="file13">github.com/SDATA-Colombia/ms-plan/internal/service/s_create.go (72.2%)</option>
+				
+				<option value="file14">github.com/SDATA-Colombia/ms-plan/internal/service/s_delete.go (62.3%)</option>
+				
+				<option value="file15">github.com/SDATA-Colombia/ms-plan/internal/service/s_read.go (78.8%)</option>
+				
+				<option value="file16">github.com/SDATA-Colombia/ms-plan/internal/service/s_update.go (61.9%)</option>
+				
+				<option value="file17">github.com/SDATA-Colombia/ms-plan/pkg/cache/cache.go (58.8%)</option>
+				
+				<option value="file18">github.com/SDATA-Colombia/ms-plan/pkg/cache/hash.go (80.0%)</option>
+				
+				<option value="file19">github.com/SDATA-Colombia/ms-plan/pkg/cache/keys.go (100.0%)</option>
+				
+				<option value="file20">github.com/SDATA-Colombia/ms-plan/pkg/cache/version.go (52.9%)</option>
+				
+				<option value="file21">github.com/SDATA-Colombia/ms-plan/pkg/dragonfly/dragonfly.go (64.3%)</option>
+				
+				<option value="file22">github.com/SDATA-Colombia/ms-plan/pkg/logger/logger.go (52.0%)</option>
+				
+				<option value="file23">github.com/SDATA-Colombia/ms-plan/pkg/mongodb/mongodb.go (40.7%)</option>
+				
+				<option value="file24">github.com/SDATA-Colombia/ms-plan/pkg/pulsar/client.go (70.0%)</option>
+				
+				<option value="file25">github.com/SDATA-Colombia/ms-plan/pkg/pulsar/consumer.go (0.0%)</option>
+				
+				<option value="file26">github.com/SDATA-Colombia/ms-plan/pkg/pulsar/dlq.go (0.0%)</option>
+				
+				<option value="file27">github.com/SDATA-Colombia/ms-plan/pkg/pulsar/event.go (50.0%)</option>
+				
+				<option value="file28">github.com/SDATA-Colombia/ms-plan/pkg/pulsar/idempotency.go (0.0%)</option>
+				
+				<option value="file29">github.com/SDATA-Colombia/ms-plan/pkg/pulsar/producer.go (81.5%)</option>
+				
+				<option value="file30">github.com/SDATA-Colombia/ms-plan/pkg/pulsar/retry.go (0.0%)</option>
+				
+				<option value="file31">github.com/SDATA-Colombia/ms-plan/pkg/pulsar/shutdown.go (0.0%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">not covered</span>
+				<span class="cov8">covered</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">package config
+
+import (
+        "os"
+        "strconv"
+)
+
+type Config struct {
+        GRPCPort      int
+        Environment   string
+        MongoURI      string
+        MongoDatabase string
+        DragonflyAddr string
+        DragonflyPass string
+        PulsarURL     string
+        PulsarToken   string
+}
+
+func Load() *Config <span class="cov8" title="1">{
+        grpcPort, _ := strconv.Atoi(os.Getenv("GRPC_PORT"))
+
+        return &amp;Config{
+                GRPCPort:      grpcPort,
+                Environment:   os.Getenv("APP_ENV"),
+                MongoURI:      os.Getenv("MONGO_URI"),
+                MongoDatabase: os.Getenv("MONGO_DATABASE"),
+                DragonflyAddr: os.Getenv("DRAGONFLY_ADDR"),
+                DragonflyPass: os.Getenv("DRAGONFLY_PASS"),
+                PulsarURL:     os.Getenv("PULSAR_URL"),
+                PulsarToken:   os.Getenv("PULSAR_TOKEN"),
+        }
+}</span>
+
+func (c *Config) IsDevelopment() bool <span class="cov0" title="0">{
+        return c != nil &amp;&amp;
+                (c.Environment == "development" || c.Environment == "dev")
+}</span>
+</pre>
+		
+		<pre class="file" id="file1" style="display: none">package consumer
+
+import (
+        "context"
+
+        "github.com/SDATA-Colombia/ms-plan/pkg/logger"
+)
+
+func PlanCreated(
+        ctx context.Context,
+        payload []byte,
+
+) error <span class="cov0" title="0">{
+
+        logger.Info(
+                "Evento recibido",
+                "payload",
+                string(payload),
+        )
+
+        return nil
+}</span>
+</pre>
+		
+		<pre class="file" id="file2" style="display: none">package consumer
+
+import "github.com/SDATA-Colombia/ms-plan/pkg/pulsar"
+
+func Register() error <span class="cov0" title="0">{
+
+        // 1. Instanciamos la configuración de reintentos por defecto
+        retryCfg := pulsar.DefaultRetryConfig()
+
+        // 2. Instanciamos el almacén de idempotencia usando tu caché en Dragonfly
+        store := pulsar.NewDragonflyIdempotencyStore("ms-plan")
+
+        return pulsar.Subscribe(
+                pulsar.TopicPlanCreated,
+                "ms-plan",
+                PlanCreated,
+                retryCfg, // Inyectamos Retry
+                store,    // Inyectamos Idempotencia
+        )
+}</span>
+</pre>
+		
+		<pre class="file" id="file3" style="display: none">package controller
+
+import (
+        "github.com/SDATA-Colombia/ms-plan/internal/service"
+
+        v1 "github.com/SDATA-Colombia/shared-go-proto/plan/v1"
+)
+
+// gRPC: PlanController implementa la interfaz gRPC generada por protoc-gen-go-grpc.
+type PlanController struct {
+        v1.UnimplementedPlanServiceServer
+        service *service.BaseService
+}
+
+func NewPlanController(
+        service *service.BaseService,
+        
+) *PlanController <span class="cov8" title="1">{
+
+        return &amp;PlanController{
+                service: service,
+        }
+}</span>
+
+// Funciones del PlanController que implementan la interfaz gRPC generada por protoc-gen-go-grpc.
+// Están implementadas en archivos separados con contexto por cada función CRUD.
+// Ruta: /controller/create.go, /controller/delete.go, etc.
+// Cada función recibe un contexto, una solicitud y retorna una respuesta y un error.
+</pre>
+		
+		<pre class="file" id="file4" style="display: none">package controller
+
+import (
+        "context"
+
+        planpb "github.com/SDATA-Colombia/shared-go-proto/plan/v1"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/mapper"
+
+        "google.golang.org/grpc/codes"
+        "google.golang.org/grpc/status"
+)
+
+func (c *PlanController) CreatePlan(
+        ctx context.Context,
+        req *planpb.CreatePlanReq,
+
+) (*planpb.CreatePlanRes, error) <span class="cov8" title="1">{
+
+        plan, err := mapper.ProtoToEntity(req.GetData())
+        if err != nil </span><span class="cov8" title="1">{
+                return nil, status.Error(codes.InvalidArgument, err.Error())
+        }</span>
+
+        <span class="cov8" title="1">if err := c.service.Create(ctx, plan); err != nil </span><span class="cov8" title="1">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">return &amp;planpb.CreatePlanRes{
+                Success: true,
+                Message: "A plan has been successfully registered",
+                Data:    mapper.EntityToProto(plan),
+        }, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package controller
+
+import (
+        "context"
+        "errors"
+        "strings"
+
+        planpb "github.com/SDATA-Colombia/shared-go-proto/plan/v1"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/mapper"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+        "go.mongodb.org/mongo-driver/v2/mongo"
+
+        "google.golang.org/grpc/codes"
+        "google.golang.org/grpc/status"
+)
+
+func (c *PlanController) DeletePlan(
+        ctx context.Context,
+        req *planpb.DeletePlanReq,
+
+) (*planpb.DeletePlanRes, error) <span class="cov8" title="1">{
+        
+        idStr := strings.TrimSpace(req.GetId())
+    if idStr == "" </span><span class="cov8" title="1">{
+        return nil, status.Error(codes.InvalidArgument, "ID is required")
+    }</span>
+
+    <span class="cov8" title="1">id, err := bson.ObjectIDFromHex(idStr)
+    if err != nil </span><span class="cov8" title="1">{
+        return nil, status.Error(codes.InvalidArgument, "Invalid ID format")
+    }</span>
+
+        <span class="cov8" title="1">if err := c.service.DeleteByID(ctx, id); err != nil </span><span class="cov8" title="1">{
+
+                if errors.Is(err, mongo.ErrNoDocuments) </span><span class="cov0" title="0">{
+            return nil, status.Error(codes.NotFound, "Plan not found")
+        }</span>
+
+                <span class="cov8" title="1">return nil, err</span>
+        }
+
+        <span class="cov8" title="1">return &amp;planpb.DeletePlanRes{
+                Success: true,
+                Message: "A plan has been successfully deleted",
+        }, nil</span>
+}
+
+func (c *PlanController) DeleteFeaturePlan(
+        ctx context.Context,
+        req *planpb.DeleteFeaturePlanReq,
+
+) (*planpb.DeleteFeaturePlanRes, error) <span class="cov8" title="1">{
+        
+        id := req.GetId()
+        // if id &lt;= 0 {
+        //         return nil, status.Error(codes.InvalidArgument, "A feature ID is required")
+        // }
+
+        idStrP := strings.TrimSpace(req.GetPlanId())
+    if idStrP == "" </span><span class="cov8" title="1">{
+        return nil, status.Error(codes.InvalidArgument, "Plan ID is required")
+    }</span>
+
+    <span class="cov8" title="1">idP, err := bson.ObjectIDFromHex(idStrP)
+    if err != nil </span><span class="cov8" title="1">{
+        return nil, status.Error(codes.InvalidArgument, "Invalid ID format")
+    }</span>
+
+        <span class="cov8" title="1">updatedPlan, err := c.service.DeleteByFeatureID(
+                ctx,
+                id,
+                idP,
+        )
+        if err != nil </span><span class="cov8" title="1">{
+
+                if errors.Is(err, mongo.ErrNoDocuments) </span><span class="cov0" title="0">{
+            return nil, status.Error(codes.NotFound, "Plan not found")
+        }</span>
+
+                <span class="cov8" title="1">return nil, err</span>
+        }
+
+        <span class="cov8" title="1">return &amp;planpb.DeleteFeaturePlanRes{
+                Success: true,
+                Message: "A feature has been removed",
+                Data:    mapper.EntityToProto(updatedPlan),
+        }, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file6" style="display: none">package controller
+
+import (
+        "context"
+        "strings"
+
+        planpb "github.com/SDATA-Colombia/shared-go-proto/plan/v1"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/mapper"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+
+        "google.golang.org/grpc/codes"
+        "google.golang.org/grpc/status"
+)
+
+func (c *PlanController) GetPlan(
+        ctx context.Context,
+        req *planpb.GetPlanReq,
+
+) (*planpb.GetPlanRes, error) <span class="cov8" title="1">{
+
+        idStr := strings.TrimSpace(req.GetId())
+    if idStr == "" </span><span class="cov8" title="1">{
+        return nil, status.Error(codes.InvalidArgument, "ID is required")
+    }</span>
+
+    <span class="cov8" title="1">id, err := bson.ObjectIDFromHex(idStr)
+    if err != nil </span><span class="cov8" title="1">{
+        return nil, status.Error(codes.InvalidArgument, "Invalid ID format")
+    }</span>
+
+        <span class="cov8" title="1">plan, err := c.service.FindByID(ctx, id)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">if plan == nil </span><span class="cov8" title="1">{
+        return nil, status.Error(codes.NotFound, "Plan not found")
+    }</span>
+
+        <span class="cov8" title="1">return &amp;planpb.GetPlanRes{
+                Success: true,
+                Message: "Plan successfully queried by ID",
+                Data:    mapper.EntityToProto(plan),
+        }, nil</span>
+}
+
+func (c *PlanController) ListPlan(
+        ctx context.Context,
+        req *planpb.ListPlanReq,
+
+) (*planpb.ListPlanRes, error) <span class="cov8" title="1">{
+
+        entities, err := c.service.FindManyPaginated(
+                ctx,
+                bson.M{},
+                int64(req.GetPage()),
+                int64(req.GetLimit()),
+        )
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">total, err := c.service.Count(
+                ctx,
+                bson.M{},
+        )
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">return &amp;planpb.ListPlanRes{
+                Success: true,
+                Message: "Plan consultadas correctamente",
+                Data:    mapper.EntitiesToProto(entities),
+                Total:   total,
+        }, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file7" style="display: none">package controller
+
+import (
+        "context"
+        "errors"
+        "strings"
+
+        planpb "github.com/SDATA-Colombia/shared-go-proto/plan/v1"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/mapper"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+        "go.mongodb.org/mongo-driver/v2/mongo"
+
+        "google.golang.org/grpc/codes"
+        "google.golang.org/grpc/status"
+)
+
+func (c *PlanController) UpdatePlan(
+        ctx context.Context,
+        req *planpb.UpdatePlanReq,
+
+) (*planpb.UpdatePlanRes, error) <span class="cov8" title="1">{
+
+        idStr := strings.TrimSpace(req.GetId())
+    if idStr == "" </span><span class="cov8" title="1">{
+        return nil, status.Error(codes.InvalidArgument, "ID is required")
+    }</span>
+
+    <span class="cov8" title="1">id, err := bson.ObjectIDFromHex(idStr)
+    if err != nil </span><span class="cov8" title="1">{
+        return nil, status.Error(codes.InvalidArgument, "Invalid ID format")
+    }</span>
+
+        <span class="cov8" title="1">plan, err := mapper.ProtoToEntity(req.GetData())
+        if err != nil </span><span class="cov8" title="1">{
+                return nil, status.Error(codes.InvalidArgument, err.Error())
+        }</span>
+
+        <span class="cov8" title="1">updatedPlan, err := c.service.UpdateByID(
+                ctx,
+                id,
+                plan,
+        )
+        if err != nil </span><span class="cov8" title="1">{
+
+                if errors.Is(err, mongo.ErrNoDocuments) </span><span class="cov8" title="1">{
+            return nil, status.Error(codes.NotFound, "Plan not found")
+        }</span>
+
+                <span class="cov0" title="0">return nil, err</span>
+        }
+
+        <span class="cov8" title="1">return &amp;planpb.UpdatePlanRes{
+                Success: true,
+                Message: "The plan has been successfully updated",
+                Data:    mapper.EntityToProto(updatedPlan),
+        }, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file8" style="display: none">package controller
+
+// Controller: El traductor de gRPC.
+// Recibe el request de proto, lo pasa al mapper, llama al service, devuelve proto.
+// NO tiene lógica de negocio ni toca Mongo directamente.
+
+//-------------------------------------------------------------------------------------------------------
+// Node.js (Express + Mongoose): El envoltorio try/catch del controller de Express + res.status (...)
+//-------------------------------------------------------------------------------------------------------
+
+import (
+        planv1 "github.com/SDATA-Colombia/shared-go-proto/plan/v1" // Asegúrate de importar la proto de ms-plan si es distinta
+
+        "github.com/SDATA-Colombia/ms-plan/internal/service"
+
+        "google.golang.org/grpc"
+)
+
+func Register(
+        server *grpc.Server,
+        baseService *service.BaseService,
+
+) <span class="cov8" title="1">{
+        // Plan
+        planv1.RegisterPlanServiceServer(
+                server,
+                NewPlanController(baseService),
+        )
+}</span>
+</pre>
+		
+		<pre class="file" id="file9" style="display: none">package mapper
+
+// Mapper: Puente entre entity (Mongo) y proto (red).
+// NO contiene lógica de negocio, NO decide rutas, NO hace I/O.
+
+import (
+        planpb "github.com/SDATA-Colombia/shared-go-proto/plan/v1"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/model/entity"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+        "google.golang.org/protobuf/types/known/timestamppb"
+)
+
+// ProtoToEntity convierte un PlanEntity (gRPC)
+// en una entidad de MongoDB.
+
+// ----------------------------------------------------------------------
+// Proto -&gt; Entity
+// ----------------------------------------------------------------------
+
+func ProtoToEntity(proto *planpb.PlanEntity) (*entity.Plan, error) <span class="cov8" title="1">{
+
+        var objectID bson.ObjectID
+
+        if proto.GetId() != "" </span><span class="cov8" title="1">{
+                id, err := bson.ObjectIDFromHex(proto.GetId())
+                if err != nil </span><span class="cov8" title="1">{
+                        return nil, err
+                }</span>
+                <span class="cov8" title="1">objectID = id</span>
+        }
+
+        <span class="cov8" title="1">var idCompany bson.ObjectID
+
+        if proto.GetPlanIdCompany() != "" </span><span class="cov8" title="1">{
+                id, err := bson.ObjectIDFromHex(proto.GetPlanIdCompany())
+                if err != nil </span><span class="cov8" title="1">{
+                        return nil, err
+                }</span>
+                <span class="cov8" title="1">idCompany = id</span>
+        }
+
+        <span class="cov8" title="1">plan := &amp;entity.Plan{
+                ID:                     objectID,
+                PlanIDCompany:          idCompany,
+                PlanAccentColor:        proto.GetPlanAccentColor(),
+                PlanAccentTextColor:    proto.GetPlanAccentTextColor(),
+                PlanTitle:              proto.GetPlanTitle(),
+                PlanSubtitle:           proto.GetPlanSubtitle(),
+                PlanDescriptionTinyMCE: proto.GetPlanDescriptionTinymce(),
+                PlanType:               proto.GetPlanType(),
+                PlanCurrencyPrice:      proto.GetPlanCurrencyPrice(),
+                PlanMenu:               proto.GetPlanMenu(),
+                PlanDescriptionItems:   proto.GetPlanDescriptionItems(),
+
+                PlanDays:       proto.GetPlanDays(),
+                PlanOffices:    proto.GetPlanOffices(),
+                PlanUsers:      proto.GetPlanUsers(),
+                PlanTotalSales: proto.GetPlanTotalSales(),
+                PlanPrice:      proto.GetPlanPrice(),
+
+                PlanFeatured: proto.GetPlanFeatured(),
+                PlanCustom:   proto.GetPlanCustom(),
+                ActivePlan:   proto.GetActivePlan(),
+        }
+
+        if proto.GetCreatedAt() != nil </span><span class="cov8" title="1">{
+                plan.CreatedAt = proto.GetCreatedAt().AsTime()
+        }</span>
+
+        <span class="cov8" title="1">if proto.GetUpdatedAt() != nil </span><span class="cov8" title="1">{
+                plan.UpdatedAt = proto.GetUpdatedAt().AsTime()
+        }</span>
+
+        <span class="cov8" title="1">if proto.GetDeletedAt() != nil </span><span class="cov8" title="1">{
+                t := proto.GetDeletedAt().AsTime()
+                plan.DeletedAt = &amp;t
+        }</span>
+
+        <span class="cov8" title="1">return plan, nil</span>
+}
+
+// EntityToProto convierte una entidad MongoDB
+// en PlanEntity (gRPC).
+
+// ----------------------------------------------------------------------
+// Entity -&gt; Proto
+// ----------------------------------------------------------------------
+
+func EntityToProto(plan *entity.Plan) *planpb.PlanEntity <span class="cov8" title="1">{
+        if plan == nil </span><span class="cov0" title="0">{
+                return nil
+        }</span>
+
+        <span class="cov8" title="1">var id string
+        if !plan.ID.IsZero() </span><span class="cov8" title="1">{
+                id = plan.ID.Hex()
+        }</span>
+
+        <span class="cov8" title="1">var planIDCompany string
+        if !plan.PlanIDCompany.IsZero() </span><span class="cov8" title="1">{
+                planIDCompany = plan.PlanIDCompany.Hex()
+        }</span>
+
+        <span class="cov8" title="1">var deletedAt *timestamppb.Timestamp
+        if plan.DeletedAt != nil </span><span class="cov8" title="1">{
+                deletedAt = timestamppb.New(*plan.DeletedAt)
+        }</span>
+
+        <span class="cov8" title="1">return &amp;planpb.PlanEntity{
+                Id:                     id,
+                PlanIdCompany:          planIDCompany,
+                PlanAccentColor:        plan.PlanAccentColor,
+                PlanAccentTextColor:    plan.PlanAccentTextColor,
+                PlanTitle:              plan.PlanTitle,
+                PlanSubtitle:           plan.PlanSubtitle,
+                PlanDescriptionTinymce: plan.PlanDescriptionTinyMCE,
+                PlanType:               plan.PlanType,
+                PlanCurrencyPrice:      plan.PlanCurrencyPrice,
+                PlanMenu:               plan.PlanMenu,
+                PlanDescriptionItems:   plan.PlanDescriptionItems,
+
+                PlanDays:       plan.PlanDays,
+                PlanOffices:    plan.PlanOffices,
+                PlanUsers:      plan.PlanUsers,
+                PlanTotalSales: plan.PlanTotalSales,
+                PlanPrice:      plan.PlanPrice,
+
+                PlanFeatured: plan.PlanFeatured,
+                PlanCustom:   plan.PlanCustom,
+                ActivePlan:   plan.ActivePlan,
+
+                CreatedAt: timestamppb.New(plan.CreatedAt),
+                UpdatedAt: timestamppb.New(plan.UpdatedAt),
+                DeletedAt: deletedAt,
+        }</span>
+}
+
+// EntitiesToProto convierte una lista de entidades
+// en una lista de PlanEntity.
+func EntitiesToProto(bases []*entity.Plan) []*planpb.PlanEntity <span class="cov8" title="1">{
+
+        result := make([]*planpb.PlanEntity, 0, len(bases))
+
+        for _, plan := range bases </span><span class="cov8" title="1">{
+                result = append(result, EntityToProto(plan))
+        }</span>
+
+        <span class="cov8" title="1">return result</span>
+}
+</pre>
+		
+		<pre class="file" id="file10" style="display: none">package repository
+
+// Repository: Solo habla con Mongo, nada más.
+// Sabe insertar, buscar, contar, actualizar documentos, etc.
+// NO sabe de reglas de negocio (ej: "no permitir emails duplicados", "enviar evento a Pulsar", "cachear en Dragonfly").
+// NO sabe de gRPC ni de proto.
+// Es "tonto a propósito" — solo traduce entre bson.M y Mongo.
+
+//-------------------------------------------------------------------------------------------------------
+// Node.js (Express + Mongoose): Model.create(), Model.findById() (Mongoose)
+//-------------------------------------------------------------------------------------------------------
+
+import (
+        "context"
+
+        "github.com/SDATA-Colombia/ms-plan/pkg/mongodb"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+        "go.mongodb.org/mongo-driver/v2/mongo"
+        "go.mongodb.org/mongo-driver/v2/mongo/options"
+)
+
+type BaseRepository[T any] struct {
+        collection *mongo.Collection
+}
+
+func NewBaseRepository[T any](collection string) *BaseRepository[T] <span class="cov8" title="1">{
+        return &amp;BaseRepository[T]{
+                collection: mongodb.Collection(collection),
+        }
+}</span>
+
+// Collection retorna la colección de MongoDB.
+func (r *BaseRepository[T]) Collection() *mongo.Collection <span class="cov0" title="0">{
+        return r.collection
+}</span>
+
+// ----------------------------------------------------------------------
+// INDEXES
+// ----------------------------------------------------------------------
+
+// EnsureIndexes crea los índices definidos para la colección.
+// Si el índice ya existe, MongoDB simplemente lo reutiliza.
+func (r *BaseRepository[T]) EnsureIndexes(
+        ctx context.Context,
+        indexModels []mongo.IndexModel,
+
+) error <span class="cov8" title="1">{
+        _, err := r.collection.Indexes().CreateMany(
+                ctx,
+                indexModels,
+        )
+
+        return err
+}</span>
+
+// ----------------------------------------------------------------------
+// CREATE
+// ----------------------------------------------------------------------
+
+// Create inserta una nueva entidad.
+func (r *BaseRepository[T]) Create(
+        ctx context.Context,
+        entity *T,
+
+) error <span class="cov8" title="1">{
+        _, err := r.collection.InsertOne(
+                ctx,
+                entity,
+        )
+
+        return err
+}</span>
+
+// ----------------------------------------------------------------------
+// READ
+// ----------------------------------------------------------------------
+
+// FindByID obtiene una entidad por su identificador.
+func (r *BaseRepository[T]) FindByID(
+        ctx context.Context,
+        id bson.ObjectID,
+
+) (*T, error) <span class="cov8" title="1">{
+        var entity T
+
+        err := r.collection.FindOne(
+                ctx,
+                bson.M{
+                        "_id": id,
+                },
+        ).Decode(&amp;entity)
+
+        if err == mongo.ErrNoDocuments </span><span class="cov8" title="1">{
+                return nil, nil
+        }</span>
+
+        <span class="cov8" title="1">if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">return &amp;entity, nil</span>
+}
+
+// FindOne obtiene una entidad según el filtro.
+func (r *BaseRepository[T]) FindOne(
+        ctx context.Context,
+        filter bson.M,
+
+) (*T, error) <span class="cov8" title="1">{
+        var entity T
+
+        err := r.collection.FindOne(
+                ctx,
+                filter,
+        ).Decode(&amp;entity)
+
+        if err == mongo.ErrNoDocuments </span><span class="cov8" title="1">{
+                return nil, nil
+        }</span>
+
+        <span class="cov8" title="1">if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">return &amp;entity, nil</span>
+}
+
+// FindManyPaginated obtiene múltiples entidades con paginación.
+func (r *BaseRepository[T]) FindManyPaginated(
+        ctx context.Context,
+        filter bson.M,
+        page int64,
+        limit int64,
+
+        // ) ([]*T, error) {
+) (entities []*T, retErr error) <span class="cov8" title="1">{
+
+        if page &lt; 1 </span><span class="cov8" title="1">{
+                page = 1
+        }</span>
+
+        <span class="cov8" title="1">if limit &lt; 1 </span><span class="cov8" title="1">{
+                limit = 10
+        }</span>
+
+        <span class="cov8" title="1">skip := (page - 1) * limit
+
+        cursor, err := r.collection.Find(
+                ctx,
+                filter,
+                options.Find().
+                        SetSkip(skip).
+                        SetLimit(limit),
+        )
+
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        // defer cursor.Close(ctx)
+
+        // var entities []*T
+
+        // if err := cursor.All(ctx, &amp;entities); err != nil {
+        //         return nil, err
+        // }
+
+        // return entities, nil
+
+        <span class="cov8" title="1">defer func() </span><span class="cov8" title="1">{
+                if closeErr := cursor.Close(ctx); closeErr != nil &amp;&amp; retErr == nil </span><span class="cov0" title="0">{
+                        retErr = closeErr
+                }</span>
+        }()
+
+        <span class="cov8" title="1">if err := cursor.All(ctx, &amp;entities); err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">return entities, nil</span>
+}
+
+// FindByField obtiene una entidad por un campo específico.
+func (r *BaseRepository[T]) FindByField(
+        ctx context.Context,
+        field string,
+        value any,
+
+) (*T, error) <span class="cov8" title="1">{
+        return r.FindOne(
+                ctx,
+                bson.M{
+                        field: value,
+                },
+        )
+}</span>
+
+// ----------------------------------------------------------------------
+// HELPERS
+// ----------------------------------------------------------------------
+
+// Exists verifica si existe al menos una entidad según el filtro.
+func (r *BaseRepository[T]) Exists(
+        ctx context.Context,
+        filter bson.M,
+
+) (bool, error) <span class="cov0" title="0">{
+        count, err := r.collection.CountDocuments(
+                ctx,
+                filter,
+        )
+
+        if err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+
+        <span class="cov0" title="0">return count &gt; 0, nil</span>
+}
+
+// Count retorna la cantidad de entidades que cumplen el filtro.
+func (r *BaseRepository[T]) Count(
+        ctx context.Context,
+        filter bson.M,
+
+) (int64, error) <span class="cov8" title="1">{
+        return r.collection.CountDocuments(
+                ctx,
+                filter,
+        )
+}</span>
+
+// ----------------------------------------------------------------------
+// UPDATE
+// ----------------------------------------------------------------------
+
+// UpdateByID actualiza una entidad por su identificador.
+func (r *BaseRepository[T]) UpdateByID(
+        ctx context.Context,
+        id bson.ObjectID,
+        update bson.M,
+
+) error <span class="cov8" title="1">{
+        updateDoc := bson.D{
+                {
+                        Key:   "$set",
+                        Value: update,
+                },
+        }
+
+        result, err := r.collection.UpdateOne(
+                ctx,
+                bson.D{
+                        {
+                                Key:   "_id",
+                                Value: id,
+                        },
+                },
+                updateDoc,
+        )
+
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">if result.MatchedCount == 0 </span><span class="cov8" title="1">{
+                return mongo.ErrNoDocuments
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+
+// UpdateMany actualiza múltiples entidades según el filtro.
+func (r *BaseRepository[T]) UpdateMany(
+        ctx context.Context,
+        filter bson.M,
+        update bson.M,
+
+) error <span class="cov0" title="0">{
+        _, err := r.collection.UpdateMany(
+                ctx,
+                filter,
+                bson.M{
+                        "$set": update,
+                },
+        )
+
+        return err
+}</span>
+
+// ----------------------------------------------------------------------
+// DELETE
+// ----------------------------------------------------------------------
+
+// DeleteByID elimina físicamente una entidad por su identificador.
+func (r *BaseRepository[T]) DeleteByID(
+        ctx context.Context,
+        id bson.ObjectID,
+
+) error <span class="cov8" title="1">{
+        result, err := r.collection.DeleteOne(
+                ctx,
+                bson.M{
+                        "_id": id,
+                },
+        )
+
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">if result.DeletedCount == 0 </span><span class="cov8" title="1">{
+                return mongo.ErrNoDocuments
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file11" style="display: none">package service
+
+// Service: Capa de negocio / lógica de negocio.
+// Decide cuándo llamar al repository.
+// Aquí van las validaciones, el cache-aside con Dragonfly,
+// publicar eventos a Pulsar, orquestar varias operaciones.
+// NO sabe de gRPC ni de proto — solo trabaja con entity.Plan.
+
+import (
+        "time"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/model/entity"
+        "github.com/SDATA-Colombia/ms-plan/internal/repository"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+)
+
+type BaseService struct {
+        repository *repository.BaseRepository[entity.Plan]
+}
+
+func NewBaseService(
+        repository *repository.BaseRepository[entity.Plan],
+
+) *BaseService <span class="cov8" title="1">{
+
+        return &amp;BaseService{
+                repository: repository,
+        }
+}</span>
+
+// ----------------------------------------------------------------------
+// DEFAULTS
+// ----------------------------------------------------------------------
+
+// applyCreateDefaults aplica los valores por defecto para una creación.
+func (s *BaseService) applyCreateDefaults(
+        entity *entity.Plan,
+) <span class="cov8" title="1">{
+
+        if entity == nil </span><span class="cov0" title="0">{
+                return
+        }</span>
+
+        <span class="cov8" title="1">now := time.Now().UTC()
+
+        // MongoDB genera automáticamente el _id,
+        // pero si queremos comportarnos como Mongoose
+        // lo generamos antes de guardar.
+        if entity.ID.IsZero() </span><span class="cov8" title="1">{
+                entity.ID = bson.NewObjectID()
+        }</span>
+
+        <span class="cov8" title="1">if entity.CreatedAt.IsZero() </span><span class="cov8" title="1">{
+                entity.CreatedAt = now
+        }</span>
+
+        <span class="cov8" title="1">entity.UpdatedAt = now
+        entity.DeletedAt = nil
+
+        // Valor por defecto.
+        entity.PlanTotalSales = 0</span>
+}
+
+// applyUpdateDefaults aplica los valores por defecto
+// antes de actualizar un documento.
+func (s *BaseService) applyUpdateDefaults(
+        update bson.M,
+) <span class="cov8" title="1">{
+
+        if update == nil </span><span class="cov0" title="0">{
+                return
+        }</span>
+
+        <span class="cov8" title="1">update["updatedAt"] = time.Now().UTC()
+
+        delete(update, "_id")
+        delete(update, "createdAt")
+        delete(update, "deletedAt")</span>
+}
+</pre>
+		
+		<pre class="file" id="file12" style="display: none">package service
+
+import (
+        "context"
+
+        "github.com/SDATA-Colombia/ms-plan/pkg/cache"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+)
+
+// ----------------------------------------------------------------------
+// HELPERS
+// ----------------------------------------------------------------------
+
+// Exists verifica si existe al menos una entidad según el filtro.
+func (s *BaseService) Exists(
+        ctx context.Context,
+        filter bson.M,
+
+) (bool, error) <span class="cov0" title="0">{
+
+        return s.repository.Exists(
+                ctx,
+                filter,
+        )
+}</span>
+
+// Count retorna la cantidad de entidades que cumplen el filtro.
+func (s *BaseService) Count(
+        ctx context.Context,
+        filter bson.M,
+
+) (int64, error) <span class="cov8" title="1">{
+
+        return s.repository.Count(
+                ctx,
+                filter,
+        )
+}</span>
+
+// bumpCacheVersion incrementa la versión del namespace.
+//
+// No elimina llaves de Dragonfly. Únicamente incrementa la versión
+// del namespace para que las siguientes consultas utilicen nuevas
+// llaves de caché. Las llaves anteriores expirarán automáticamente
+// según su TTL.
+func (s *BaseService) bumpCacheVersion(
+        ctx context.Context,
+        namespace ...any,
+
+) error <span class="cov8" title="1">{
+
+        parts := append([]any{cacheEntity}, namespace...)
+
+        _, err := cache.IncrementVersion(
+                ctx,
+                cache.VersionKey(parts...),
+        )
+
+        return err
+}</span>
+
+// Obtener la versión actual del namespace de caché.
+func (s *BaseService) cacheVersion(
+        ctx context.Context,
+        namespace ...any,
+
+) (int64, error) <span class="cov8" title="1">{
+
+        parts := append([]any{cacheEntity}, namespace...)
+
+        return cache.GetVersion(
+                ctx,
+                cache.VersionKey(parts...),
+        )
+}</span>
+
+// Construye una llave de caché versionada para el namespace de la entidad.
+func (s *BaseService) cacheKey(
+        ctx context.Context,
+        tenantNamespace []any, // Ej: []any{"company", idCompany}
+        parts ...any, // Ej: "one", id.Hex()
+
+) (string, error) <span class="cov8" title="1">{
+
+        // 1. Obtenemos la versión ESPECÍFICA de este tenant
+        version, err := s.cacheVersion(ctx, tenantNamespace...)
+        if err != nil </span><span class="cov8" title="1">{
+                return "", err
+        }</span>
+
+        // 2. Construimos la base: "cacheEntity:company:123:v:2"
+        <span class="cov8" title="1">baseNamespace := append([]any{cacheEntity}, tenantNamespace...)
+
+        // Aprovechamos tu función CacheKey de keys.go (Source 4)
+        return cache.CacheKey(version, append(baseNamespace, parts...)...), nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file13" style="display: none">package service
+
+import (
+        "context"
+        "errors"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/model/entity"
+        "github.com/SDATA-Colombia/ms-plan/pkg/logger"
+        "github.com/SDATA-Colombia/ms-plan/pkg/pulsar"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+        "go.mongodb.org/mongo-driver/v2/mongo"
+
+        "golang.org/x/sync/errgroup"
+
+        "google.golang.org/grpc/codes"
+        "google.golang.org/grpc/status"
+)
+
+// BaseService está en el mismo package service.
+// repository ya está importado en base.go.
+// T es el genérico declarado en BaseService[T].
+// repository.Create() e InsertMany() ya son accesibles a través de s.repository.
+// En Go cada archivo importa únicamente lo que utiliza, aunque pertenezcan al mismo package.
+
+// ----------------------------------------------------------------------
+// CREATE
+// ----------------------------------------------------------------------
+
+// Create registra una nueva entidad.
+func (s *BaseService) Create(
+        ctx context.Context,
+        plan *entity.Plan,
+
+) error <span class="cov8" title="1">{
+
+        s.applyCreateDefaults(plan)
+
+        //----------------------------------------------------------------------
+        // EJECUCIÓN PARALELA
+        //----------------------------------------------------------------------
+
+        g, ctxGroup := errgroup.WithContext(ctx)
+
+        // ------------------------------------------------------------------
+        // VALIDACIONES
+        // ------------------------------------------------------------------
+
+        // Validaciones locales.
+        g.Go(func() error </span><span class="cov8" title="1">{
+
+                if plan.PlanTitle == "" </span><span class="cov8" title="1">{
+                        return status.Error(
+                                codes.InvalidArgument,
+                                "Plan title is required",
+                        )
+                }</span>
+
+                <span class="cov8" title="1">if plan.PlanSubtitle == "" </span><span class="cov8" title="1">{
+                        return status.Error(
+                                codes.InvalidArgument,
+                                "Plan subtitle is required",
+                        )
+                }</span>
+
+                <span class="cov8" title="1">return nil</span>
+        })
+
+        // Verificar que el plan no exista.
+        <span class="cov8" title="1">g.Go(func() error </span><span class="cov8" title="1">{
+
+                existing, err := s.FindByField(
+                        ctxGroup,
+                        "plan_title",
+                        plan.PlanTitle,
+                )
+
+                if err != nil </span><span class="cov8" title="1">{
+
+                        // Que no exista el plan NO es un error.
+                        if errors.Is(err, mongo.ErrNoDocuments) </span><span class="cov0" title="0">{
+                                return nil
+                        }</span>
+
+                        <span class="cov8" title="1">return err</span>
+                }
+
+                <span class="cov8" title="1">if existing != nil </span><span class="cov8" title="1">{
+                        return status.Error(
+                                codes.AlreadyExists,
+                                "The plan is already registered",
+                        )
+                }</span>
+
+                <span class="cov8" title="1">return nil</span>
+        })
+
+        <span class="cov8" title="1">if err := g.Wait(); err != nil </span><span class="cov8" title="1">{
+                return err
+        }</span>
+
+        //----------------------------------------------------------------------
+        // REGLA DE NEGOCIO
+        //----------------------------------------------------------------------
+
+        // Si el nuevo plan será destacado,
+        // todos los demás planes destacados dejan de serlo.
+        <span class="cov8" title="1">if plan.PlanFeatured </span><span class="cov0" title="0">{
+
+                if err := s.repository.UpdateMany(
+                        ctx,
+                        bson.M{
+                                "plan_featured": true,
+                        },
+                        bson.M{
+                                "plan_featured": false,
+                        },
+
+                ); err != nil </span><span class="cov0" title="0">{
+
+                        logger.Error(err.Error())
+
+                        return status.Error(
+                                codes.Internal,
+                                "internal server error",
+                        )
+                }</span>
+        }
+
+        //----------------------------------------------------------------------
+        // PERSISTENCIA
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">if err := s.repository.Create(ctx, plan); err != nil </span><span class="cov0" title="0">{
+
+                if mongo.IsDuplicateKeyError(err) </span><span class="cov0" title="0">{
+                        return status.Error(
+                                codes.AlreadyExists,
+                                "The plan is already registered",
+                        )
+                }</span>
+
+                <span class="cov0" title="0">logger.Error(err.Error())
+
+                return status.Error(
+                        codes.Internal,
+                        "internal server error",
+                )</span>
+        }
+
+        //----------------------------------------------------------------------
+        // INVALIDAR CACHÉ
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">if err := s.bumpCacheVersion(
+                ctx,
+                "plan",
+                "global",
+        
+        ); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err.Error())
+        }</span>
+
+        //----------------------------------------------------------------------
+        // PUBLICAR EVENTO
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">event := pulsar.NewEvent(
+                pulsar.TopicPlanCreated,
+                "ms-plan",
+                plan,
+        )
+
+        event.WithCorrelation(plan.ID.Hex())
+
+        if err := pulsar.Publish(
+                ctx,
+                pulsar.TopicPlanCreated,
+                event,
+        
+        ); err != nil </span><span class="cov0" title="0">{
+
+                logger.Error(err.Error())
+
+                // return status.Error(
+                //         codes.Internal,
+                //         "internal server error",
+                // )
+        }</span> else<span class="cov8" title="1"> {
+
+                logger.Info(
+                        "Evento publicado",
+                        "topic", pulsar.TopicPlanCreated,
+                        "entity_id", plan.ID.Hex(),
+                )
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file14" style="display: none">package service
+
+import (
+        "context"
+        "encoding/json"
+        "errors"
+        "time"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/model/entity"
+        "github.com/SDATA-Colombia/ms-plan/pkg/logger"
+        "github.com/SDATA-Colombia/ms-plan/pkg/pulsar"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+        "go.mongodb.org/mongo-driver/v2/mongo"
+
+        "google.golang.org/grpc/codes"
+        "google.golang.org/grpc/status"
+)
+
+// BaseService está en el mismo package service.
+// repository ya está importado en base.go.
+// T es el genérico declarado en BaseService[T].
+// repository.DeleteByID() y DeleteMany() ya son accesibles a través de s.repository.
+// En Go cada archivo importa únicamente lo que utiliza, aunque pertenezcan al mismo package.
+
+// ----------------------------------------------------------------------
+// DELETE
+// ----------------------------------------------------------------------
+
+// DeleteByID elimina físicamente una entidad.
+func (s *BaseService) DeleteByID(
+        ctx context.Context,
+        id bson.ObjectID,
+
+) error <span class="cov8" title="1">{
+
+        // Aquí irán las validaciones.
+
+        // ------------------------------------------------------------------
+        // OBTENER ENTIDAD ANTES DE ELIMINAR (Para compensación y eventos)
+        // ------------------------------------------------------------------
+
+        plan, err := s.repository.FindByID(ctx, id)
+        if err != nil </span><span class="cov0" title="0">{
+                if errors.Is(err, mongo.ErrNoDocuments) </span><span class="cov0" title="0">{
+                        return status.Error(
+                                codes.NotFound,
+                                "Plan not found",
+                        )
+                }</span>
+
+                <span class="cov0" title="0">logger.Error(err.Error())
+
+                return status.Error(
+                        codes.Internal,
+                        "Internal server error",
+                )</span>
+        }
+
+        //----------------------------------------------------------------------
+        // PERSISTENCIA
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">if err := s.repository.DeleteByID(ctx, id); err != nil </span><span class="cov8" title="1">{
+
+                if errors.Is(err, mongo.ErrNoDocuments) </span><span class="cov8" title="1">{
+                        return status.Error(
+                                codes.NotFound,
+                                "Plan not found",
+                        )
+                }</span>
+
+                <span class="cov0" title="0">logger.Error(err.Error())
+
+                return status.Error(
+                        codes.Internal,
+                        "Internal server error",
+                )</span>
+        }
+
+        //----------------------------------------------------------------------
+        // INVALIDAR CACHÉ
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">if err := s.bumpCacheVersion(
+                ctx,
+                "plan",
+                "global",
+        ); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err.Error())
+        }</span>
+
+        //----------------------------------------------------------------------
+        // PUBLICAR EVENTO
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">event := pulsar.NewEvent(
+                pulsar.TopicPlanDeleted,
+                "ms-plan",
+                plan,
+        )
+
+        event.WithCorrelation(plan.ID.Hex())
+
+        if err := pulsar.Publish(
+                ctx,
+                pulsar.TopicPlanDeleted,
+                event,
+        ); err != nil </span><span class="cov0" title="0">{
+
+                logger.Error(err.Error())
+
+                // return status.Error(
+                //         codes.Internal,
+                //         "internal server error",
+                // )
+        }</span> else<span class="cov8" title="1"> {
+
+                logger.Info(
+                        "Evento publicado",
+                        "topic", pulsar.TopicPlanDeleted,
+                        "entity_id", plan.ID.Hex(),
+                )
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+
+// DeleteByFeatureID elimina una característica de una entidad.
+func (s *BaseService) DeleteByFeatureID(
+        ctx context.Context,
+        id int32,
+        idP bson.ObjectID,
+
+) (*entity.Plan, error) <span class="cov8" title="1">{
+
+        // Aquí irán las validaciones.
+
+        //----------------------------------------------------------------------
+        // OBTENER PLAN
+        //----------------------------------------------------------------------
+
+        plan, err := s.repository.FindByID(ctx, idP)
+        if err != nil </span><span class="cov0" title="0">{
+
+                if errors.Is(err, mongo.ErrNoDocuments) </span><span class="cov0" title="0">{
+                        return nil, status.Error(
+                                codes.NotFound,
+                                "Plan not found",
+                        )
+                }</span>
+
+                <span class="cov0" title="0">logger.Error(err.Error())
+
+                return nil, status.Error(
+                        codes.Internal,
+                        "Internal server error",
+                )</span>
+        }
+
+        <span class="cov8" title="1">if plan == nil </span><span class="cov8" title="1">{
+                return nil, status.Error(
+                        codes.NotFound,
+                        "Plan not found",
+                )
+        }</span>
+
+        //----------------------------------------------------------------------
+        // CONVERTIR JSON STRING → ARRAY
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">var features []map[string]json.RawMessage
+
+        if plan.PlanDescriptionItems != "" </span><span class="cov8" title="1">{
+
+                if err := json.Unmarshal(
+                        []byte(plan.PlanDescriptionItems),
+                        &amp;features,
+                ); err != nil </span><span class="cov8" title="1">{
+
+                        logger.Error(err.Error())
+
+                        return nil, status.Error(
+                                codes.Internal,
+                                "Invalid plan description items",
+                        )
+                }</span>
+        }
+
+        //----------------------------------------------------------------------
+        // ELIMINAR FEATURE
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">filteredFeatures := make(
+                []map[string]json.RawMessage,
+                0,
+                len(features),
+        )
+
+        // for _, feature := range features {
+
+        //         var featureID int32
+
+        //         if rawID, exists := feature["id"]; exists {
+
+        //                 if err := json.Unmarshal(rawID, &amp;featureID); err != nil {
+        //                         logger.Error(err.Error())
+
+        //                         return nil, status.Error(
+        //                                 codes.Internal,
+        //                                 "Invalid feature ID",
+        //                         )
+        //                 }
+        //         }
+
+        //         if featureID != id {
+        //                 filteredFeatures = append(
+        //                         filteredFeatures,
+        //                         feature,
+        //                 )
+        //         }
+        // }
+
+        for _, feature := range features </span><span class="cov8" title="1">{
+                rawID, exists := feature["id"]
+
+                // Si la característica no tiene ID, conservarla.
+                if !exists </span><span class="cov8" title="1">{
+                        filteredFeatures = append(filteredFeatures, feature)
+                        continue</span>
+                }
+
+                // Un ID ausente o null no debe confundirse con el índice 0.
+                <span class="cov8" title="1">var featureID *int32
+                if err := json.Unmarshal(rawID, &amp;featureID); err != nil </span><span class="cov0" title="0">{
+                        logger.Error(err.Error())
+
+                        return nil, status.Error(
+                                codes.Internal,
+                                "Invalid feature ID",
+                        )
+                }</span>
+
+                <span class="cov8" title="1">if featureID == nil </span><span class="cov0" title="0">{
+                        filteredFeatures = append(filteredFeatures, feature)
+                        continue</span>
+                }
+
+                // Eliminar únicamente la característica con el ID solicitado.
+                <span class="cov8" title="1">if *featureID != id </span><span class="cov8" title="1">{
+                        filteredFeatures = append(filteredFeatures, feature)
+                }</span>
+        }
+
+        //----------------------------------------------------------------------
+        // CONVERTIR ARRAY → JSON STRING
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">featuresJSON, err := json.Marshal(filteredFeatures)
+
+        if err != nil </span><span class="cov0" title="0">{
+
+                logger.Error(err.Error())
+
+                return nil, status.Error(
+                        codes.Internal,
+                        "Internal server error",
+                )
+        }</span>
+
+        //----------------------------------------------------------------------
+        // PERSISTENCIA
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">update := bson.M{
+                "plan_description_items": string(featuresJSON),
+                "updatedAt":              time.Now(),
+        }
+
+        if err := s.repository.UpdateByID(
+                ctx,
+                idP,
+                update,
+        ); err != nil </span><span class="cov0" title="0">{
+
+                if errors.Is(err, mongo.ErrNoDocuments) </span><span class="cov0" title="0">{
+                        return nil, status.Error(
+                                codes.NotFound,
+                                "Plan not found",
+                        )
+                }</span>
+
+                <span class="cov0" title="0">logger.Error(err.Error())
+
+                return nil, status.Error(
+                        codes.Internal,
+                        "Internal server error",
+                )</span>
+        }
+
+        //----------------------------------------------------------------------
+        // OBTENER PLAN ACTUALIZADO
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">updatedPlan, err := s.repository.FindByID(
+                ctx,
+                idP,
+        )
+
+        if err != nil </span><span class="cov0" title="0">{
+
+                logger.Error(err.Error())
+
+                return nil, status.Error(
+                        codes.Internal,
+                        "Internal server error",
+                )
+        }</span>
+
+        //----------------------------------------------------------------------
+        // INVALIDAR CACHÉ
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">if err := s.bumpCacheVersion(
+                ctx,
+                "plan",
+                "global",
+        ); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err.Error())
+        }</span>
+
+        //----------------------------------------------------------------------
+        // PUBLICAR EVENTO
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">event := pulsar.NewEvent(
+                pulsar.TopicPlanUpdated,
+                "ms-plan",
+                updatedPlan,
+        )
+
+        event.WithCorrelation(idP.Hex())
+
+        if err := pulsar.Publish(
+                ctx,
+                pulsar.TopicPlanUpdated,
+                event,
+        ); err != nil </span><span class="cov0" title="0">{
+
+                logger.Error(err.Error())
+
+                // return status.Error(
+                //         codes.Internal,
+                //         "internal server error",
+                // )
+        }</span> else<span class="cov8" title="1"> {
+
+                logger.Info(
+                        "Evento publicado",
+                        "topic", pulsar.TopicPlanUpdated,
+                        "entity_id", idP.Hex(),
+                )
+        }</span>
+
+        <span class="cov8" title="1">return updatedPlan, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file15" style="display: none">package service
+
+import (
+        "context"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/model/entity"
+        "github.com/SDATA-Colombia/ms-plan/pkg/cache"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+)
+
+// BaseService está en el mismo package service.
+// repository ya está importado en base.go.
+// T es el genérico declarado en BaseService[T].
+// repository.FindByID(), etc; ya son accesibles a través de s.repository.
+// En Go cada archivo importa únicamente lo que utiliza, aunque pertenezcan al mismo package.
+
+// ----------------------------------------------------------------------
+// READ
+// ----------------------------------------------------------------------
+
+// FindByID obtiene una entidad por su identificador.
+func (s *BaseService) FindByID(
+        ctx context.Context,
+        id bson.ObjectID,
+
+) (*entity.Plan, error) <span class="cov8" title="1">{
+
+        // Dragonfly: Generar llave de caché.
+        // Si no tienes el company_id aquí, usamos un namespace global o lo dejamos vacío.
+        // Lo ideal sería obtenerlo del ctx: companyID := ctx.Value("company_id")
+        key, err := s.cacheKey(ctx, []any{"plan", "global"}, "one", id.Hex())
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">var result entity.Plan
+
+        found, err := cache.Get(ctx, key, &amp;result)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">if found </span><span class="cov8" title="1">{
+                return &amp;result, nil
+        }</span>
+
+        // No estaba en caché, buscar en MongoDB.
+        <span class="cov8" title="1">resultPtr, err := s.repository.FindByID(ctx, id)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        // Guardar en caché el resultado.
+        <span class="cov8" title="1">if resultPtr != nil </span><span class="cov8" title="1">{
+                _ = cache.Set(ctx, key, resultPtr, cache.TTLStandard)
+        }</span>
+
+        <span class="cov8" title="1">return resultPtr, nil</span>
+}
+
+// FindManyPaginated obtiene múltiples entidades paginadas.
+func (s *BaseService) FindManyPaginated(
+        ctx context.Context,
+        filter bson.M,
+        page int64,
+        limit int64,
+
+) ([]*entity.Plan, error) <span class="cov8" title="1">{
+
+        // Dragonfly: Generar llave de caché.
+        hash, err := cache.Hash([]any{
+                filter,
+                page,
+                limit,
+        })
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">var tenantID any = "global"
+
+        key, err := s.cacheKey(ctx, []any{"plan", tenantID}, "page", hash)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">var result []*entity.Plan
+
+        found, err := cache.Get(ctx, key, &amp;result)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">if found </span><span class="cov0" title="0">{
+                return result, nil
+        }</span>
+
+        // No estaba en caché, buscar en MongoDB.
+        <span class="cov8" title="1">result, err = s.repository.FindManyPaginated(
+                ctx,
+                filter,
+                page,
+                limit,
+        )
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        // Guardar en caché el resultado.
+        <span class="cov8" title="1">_ = cache.Set(ctx, key, result, cache.TTLRealtime)
+
+        return result, nil</span>
+}
+
+// FindByField obtiene una entidad por un campo.
+func (s *BaseService) FindByField(
+        ctx context.Context,
+        field string,
+        value any,
+
+) (*entity.Plan, error) <span class="cov8" title="1">{
+
+        // Como no tenemos un 'filter', definimos el tenant dinámicamente.
+        // Si la búsqueda casualmente es por empresa, usamos el value.
+        // Si no, usamos "global" o lo sacas del ctx.
+        var tenantNamespace []any
+        if field == "company_id" </span><span class="cov0" title="0">{
+                tenantNamespace = []any{"plan", value} // &lt;-- Corregido: "company" -&gt; "plan"
+        }</span> else<span class="cov8" title="1"> {
+                tenantNamespace = []any{"plan", "global"} // &lt;-- Corregido: Agregado "plan"
+        }</span>
+
+        // Dragonfly: Generar llave de caché.
+        <span class="cov8" title="1">key, err := s.cacheKey(ctx, tenantNamespace, "field", field, value)
+        if err != nil </span><span class="cov8" title="1">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">var result entity.Plan
+
+        found, err := cache.Get(ctx, key, &amp;result)
+        if err != nil </span><span class="cov8" title="1">{
+                return nil, err
+        }</span>
+
+        <span class="cov8" title="1">if found </span><span class="cov0" title="0">{
+                return &amp;result, nil
+        }</span>
+
+        // No estaba en caché, buscar en MongoDB.
+        <span class="cov8" title="1">resultPtr, err := s.repository.FindByField(
+                ctx,
+                field,
+                value,
+        )
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        // Guardar en caché el resultado.
+        <span class="cov8" title="1">if resultPtr != nil </span><span class="cov8" title="1">{
+                _ = cache.Set(ctx, key, resultPtr, cache.TTLStandard)
+        }</span>
+
+        <span class="cov8" title="1">return resultPtr, nil</span>
+}</pre>
+		
+		<pre class="file" id="file16" style="display: none">package service
+
+import (
+        "context"
+        "time"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/model/entity"
+        "github.com/SDATA-Colombia/ms-plan/pkg/logger"
+        "github.com/SDATA-Colombia/ms-plan/pkg/pulsar"
+
+        "go.mongodb.org/mongo-driver/v2/bson"
+
+        "google.golang.org/grpc/codes"
+        "google.golang.org/grpc/status"
+)
+
+// BaseService está en el mismo package service.
+// repository ya está importado en base.go.
+// T es el genérico declarado en BaseService[T].
+// repository.UpdateByID() y UpdateMany() ya son accesibles a través de s.repository.
+// En Go cada archivo importa únicamente lo que utiliza, aunque pertenezcan al mismo package.
+
+// ----------------------------------------------------------------------
+// UPDATE
+// ----------------------------------------------------------------------
+
+// UpdateByID actualiza una entidad por su identificador.
+func (s *BaseService) UpdateByID(
+        ctx context.Context,
+        id bson.ObjectID,
+        entity *entity.Plan,
+
+) (*entity.Plan, error) <span class="cov8" title="1">{
+
+        // ------------------------------------------------------------------
+        // VALIDACIONES
+        // ------------------------------------------------------------------
+
+        if entity == nil </span><span class="cov0" title="0">{
+                return nil, status.Error(
+                        codes.InvalidArgument,
+                        "Plan data is required",
+                )
+        }</span>
+
+        <span class="cov8" title="1">if entity.PlanTitle == "" </span><span class="cov0" title="0">{
+                return nil, status.Error(
+                        codes.InvalidArgument,
+                        "Plan title is required",
+                )
+        }</span>
+
+        <span class="cov8" title="1">if entity.PlanSubtitle == "" </span><span class="cov0" title="0">{
+                return nil, status.Error(
+                        codes.InvalidArgument,
+                        "Plan subtitle is required",
+                )
+        }</span>
+
+        // Validaciones locales.
+        <span class="cov8" title="1">update := bson.M{
+                "plan_id_company":           entity.PlanIDCompany,
+                "plan_accent_color":         entity.PlanAccentColor,
+                "plan_accent_text_color":    entity.PlanAccentTextColor,
+                "plan_title":                entity.PlanTitle,
+                "plan_subtitle":             entity.PlanSubtitle,
+                "plan_description_tinymce":  entity.PlanDescriptionTinyMCE,
+                "plan_type":                 entity.PlanType,
+                "plan_currency_price":       entity.PlanCurrencyPrice,
+                "plan_menu":                 entity.PlanMenu,
+                "plan_description_items":    entity.PlanDescriptionItems,
+                "plan_days":                 entity.PlanDays,
+                "plan_offices":              entity.PlanOffices,
+                "plan_users":                entity.PlanUsers,
+                "plan_total_sales":          entity.PlanTotalSales,
+                "plan_price":                entity.PlanPrice,
+                "plan_featured":             entity.PlanFeatured,
+                "plan_custom":               entity.PlanCustom,
+                "active_plan":               entity.ActivePlan,
+                "updatedAt":                 time.Now(), // Recomendado para refrescar automáticamente la fecha de modificación
+        }
+
+        s.applyUpdateDefaults(update)
+
+        //----------------------------------------------------------------------
+        // REGLA DE NEGOCIO
+        //----------------------------------------------------------------------
+
+        // Si el nuevo plan será destacado,
+        // todos los demás planes destacados dejan de serlo.
+        if entity.PlanFeatured </span><span class="cov0" title="0">{
+
+                if err := s.repository.UpdateMany(
+                        ctx,
+                        bson.M{
+                                "plan_featured": true,
+                                "_id": bson.M{
+                                        "$ne": id,
+                                },
+                        },
+                        bson.M{
+                                "plan_featured": false,
+                        },
+        
+                ); err != nil </span><span class="cov0" title="0">{
+
+                        logger.Error(err.Error())
+
+                        return nil, status.Error(
+                                codes.Internal,
+                                "internal server error",
+                        )
+                }</span>
+        }
+
+        //----------------------------------------------------------------------
+        // PERSISTENCIA
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">if err := s.repository.UpdateByID(ctx, id, update); err != nil </span><span class="cov8" title="1">{
+                return nil, err
+        }</span>
+
+        //----------------------------------------------------------------------
+        // INVALIDAR CACHÉ
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">if err := s.bumpCacheVersion(
+                ctx,
+                "plan",
+                "global",
+        
+        ); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err.Error())
+        }</span>
+
+        //----------------------------------------------------------------------
+        // PUBLICAR EVENTO
+        //----------------------------------------------------------------------
+
+        <span class="cov8" title="1">event := pulsar.NewEvent(
+                pulsar.TopicPlanUpdated,
+                "ms-plan",
+                entity,
+        )
+
+        event.WithCorrelation(id.Hex())
+
+        if err := pulsar.Publish(
+                ctx,
+                pulsar.TopicPlanUpdated,
+                event,
+        
+        ); err != nil </span><span class="cov0" title="0">{
+
+        logger.Error(err.Error())
+        }</span>
+
+        <span class="cov8" title="1">return s.repository.FindByID(
+                ctx,
+                id,
+        )</span>
+}</pre>
+		
+		<pre class="file" id="file17" style="display: none">package cache
+
+import (
+        "context"
+        "encoding/json"
+        "time"
+
+        "github.com/SDATA-Colombia/ms-plan/pkg/dragonfly"
+        "github.com/redis/go-redis/v9"
+)
+
+// Get obtiene un valor desde Dragonfly y lo deserializa.
+func Get(
+        ctx context.Context,
+        key string,
+        dest any,
+
+) (bool, error) <span class="cov8" title="1">{
+
+        data, err := dragonfly.Client().
+                Get(ctx, key).
+                Result()
+
+        if err == redis.Nil </span><span class="cov8" title="1">{
+                return false, nil
+        }</span>
+
+        <span class="cov8" title="1">if err != nil </span><span class="cov8" title="1">{
+                return false, err
+        }</span>
+
+        <span class="cov8" title="1">if err := json.Unmarshal([]byte(data), dest); err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+
+        <span class="cov8" title="1">return true, nil</span>
+}
+
+// Set almacena un valor serializado en Dragonfly.
+func Set(
+        ctx context.Context,
+        key string,
+        value any,
+        ttl time.Duration,
+
+) error <span class="cov8" title="1">{
+
+        data, err := json.Marshal(value)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">return dragonfly.Client().
+                Set(ctx, key, data, ttl).
+                Err()</span>
+}
+
+// Delete elimina una o varias llaves.
+func Delete(
+        ctx context.Context,
+        keys ...string,
+
+) error <span class="cov0" title="0">{
+
+        return dragonfly.Client().
+                Del(ctx, keys...).
+                Err()
+}</span>
+
+// Exists indica si una llave existe.
+func Exists(
+        ctx context.Context,
+        key string,
+
+) (bool, error) <span class="cov0" title="0">{
+
+        n, err := dragonfly.Client().
+                Exists(ctx, key).
+                Result()
+
+        if err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+
+        <span class="cov0" title="0">return n &gt; 0, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file18" style="display: none">package cache
+
+import (
+        "crypto/sha256"
+        "encoding/hex"
+        "encoding/json"
+)
+
+// Hash genera un hash SHA-256 determinístico de cualquier estructura.
+//
+// Se utiliza principalmente para construir llaves de caché cuando una
+// consulta depende de filtros, paginación o parámetros complejos.
+//
+// Ejemplo:
+//
+//        filter := bson.M{
+//            "status": true,
+//            "company": companyID,
+//        }
+//
+//        hash, _ := cache.Hash(filter)
+//
+//        key := cache.Key("color", "list", hash)
+func Hash(v any) (string, error) <span class="cov8" title="1">{
+
+        data, err := json.Marshal(v)
+        if err != nil </span><span class="cov0" title="0">{
+                return "", err
+        }</span>
+
+        <span class="cov8" title="1">sum := sha256.Sum256(data)
+
+        return hex.EncodeToString(sum[:]), nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file19" style="display: none">package cache
+
+import (
+        "fmt"
+        "strings"
+)
+
+// Separator utilizado para construir todas las llaves.
+const Separator = ":"
+
+// Key construye una llave uniendo todas sus partes.
+//
+// Ejemplos:
+//
+//        Key("color", "id", id)
+//        =&gt; color:id:685b6c2f...
+//
+//        Key("invoice", "page", hash)
+//        =&gt; invoice:page:a87dc12...
+func Key(parts ...any) string <span class="cov8" title="1">{
+
+        values := make([]string, 0, len(parts))
+
+        for _, part := range parts </span><span class="cov8" title="1">{
+                values = append(values, fmt.Sprint(part))
+        }</span>
+
+        <span class="cov8" title="1">return strings.Join(values, Separator)</span>
+}
+
+// VersionKey devuelve la llave donde se almacena la versión
+// de un namespace.
+//
+// Ejemplo:
+//
+//        VersionKey("color", "company", companyID)
+//
+// Resultado:
+//
+//        color:company:10:version
+func VersionKey(parts ...any) string <span class="cov8" title="1">{
+
+        values := append(parts, "version")
+
+        return Key(values...)
+}</span>
+
+// CacheKey devuelve una llave versionada.
+//
+// Ejemplo:
+//
+//        CacheKey(
+//            version,
+//            "color",
+//            "company",
+//            companyID,
+//            "list",
+//            hash,
+//        )
+//
+// Resultado:
+//
+//        color:company:10:v:15:list:af87c...
+func CacheKey(
+        version int64,
+        parts ...any,
+) string <span class="cov8" title="1">{
+
+        values := make([]any, 0, len(parts)+2)
+
+        values = append(values, parts...)
+        values = append(values, "v")
+        values = append(values, version)
+
+        return Key(values...)
+}</span>
+</pre>
+		
+		<pre class="file" id="file20" style="display: none">package cache
+
+import (
+        "context"
+        "strconv"
+
+        "github.com/SDATA-Colombia/ms-plan/pkg/dragonfly"
+        "github.com/redis/go-redis/v9"
+)
+
+// GetVersion obtiene la versión actual de un namespace.
+//
+// Si la versión no existe, se inicializa automáticamente en 1.
+//
+// Ejemplo:
+//
+//        namespace := cache.VersionKey(
+//            "color",
+//            "company",
+//            companyID,
+//        )
+//
+//        version, err := cache.GetVersion(ctx, namespace)
+func GetVersion(
+        ctx context.Context,
+        namespace string,
+
+) (int64, error) <span class="cov8" title="1">{
+
+        client := dragonfly.Client()
+
+        value, err := client.Get(ctx, namespace).Result()
+
+        if err == redis.Nil </span><span class="cov0" title="0">{
+
+                if _, err := client.SetNX(
+                        ctx,
+                        namespace,
+                        1,
+                        TTLForever,
+                ).Result(); err != nil </span><span class="cov0" title="0">{
+                        return 0, err
+                }</span>
+
+                <span class="cov0" title="0">value, err = client.Get(ctx, namespace).Result()
+                if err != nil </span><span class="cov0" title="0">{
+                        return 0, err
+                }</span>
+        }
+
+        <span class="cov8" title="1">if err != nil </span><span class="cov8" title="1">{
+                return 0, err
+        }</span>
+
+        <span class="cov8" title="1">version, err := strconv.ParseInt(value, 10, 64)
+        if err != nil </span><span class="cov0" title="0">{
+                return 0, err
+        }</span>
+
+        <span class="cov8" title="1">return version, nil</span>
+}
+
+// IncrementVersion incrementa la versión de un namespace.
+//
+// Todas las llaves construidas con la versión anterior
+// quedarán automáticamente obsoletas.
+func IncrementVersion(
+        ctx context.Context,
+        namespace string,
+
+) (int64, error) <span class="cov8" title="1">{
+
+        return dragonfly.Client().
+                Incr(ctx, namespace).
+                Result()
+}</span>
+
+// SetVersion establece manualmente una versión.
+//
+// Normalmente no se utiliza, pero resulta útil
+// para migraciones o pruebas.
+func SetVersion(
+        ctx context.Context,
+        namespace string,
+        version int64,
+
+) error <span class="cov0" title="0">{
+
+        return dragonfly.Client().
+                Set(
+                        ctx,
+                        namespace,
+                        version,
+                        TTLForever,
+                ).
+                Err()
+}</span>
+
+// DeleteVersion elimina una versión.
+//
+// La siguiente llamada a GetVersion()
+// volverá a crearla con valor 1.
+func DeleteVersion(
+        ctx context.Context,
+        namespace string,
+
+) error <span class="cov0" title="0">{
+
+        return dragonfly.Client().
+                Del(ctx, namespace).
+                Err()
+}</span>
+</pre>
+		
+		<pre class="file" id="file21" style="display: none">package dragonfly
+
+import (
+        "context"
+        "sync"
+        "time"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/config"
+        "github.com/redis/go-redis/v9"
+)
+
+type Dragonfly struct {
+        client *redis.Client
+}
+
+var (
+        instance *Dragonfly
+        once     sync.Once
+)
+
+func Init(cfg *config.Config) error <span class="cov8" title="1">{
+
+        var err error
+
+        once.Do(func() </span><span class="cov8" title="1">{
+
+                client := redis.NewClient(&amp;redis.Options{
+                        Addr:     cfg.DragonflyAddr,
+                        Password: cfg.DragonflyPass,
+                        DB:       0,
+                })
+
+                ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+                defer cancel()
+
+                if e := client.Ping(ctx).Err(); e != nil </span><span class="cov0" title="0">{
+                        err = e
+                        return
+                }</span>
+
+                <span class="cov8" title="1">instance = &amp;Dragonfly{
+                        client: client,
+                }</span>
+        })
+
+        <span class="cov8" title="1">return err</span>
+}
+
+func Close() <span class="cov0" title="0">{
+
+        if instance == nil </span><span class="cov0" title="0">{
+                return
+        }</span>
+
+        <span class="cov0" title="0">_ = instance.client.Close()</span>
+}
+
+func Client() *redis.Client <span class="cov8" title="1">{
+        return instance.client
+}</span>
+</pre>
+		
+		<pre class="file" id="file22" style="display: none">package logger
+
+import (
+        "log/slog"
+        "os"
+)
+
+var log *slog.Logger
+
+func Init(environment string) <span class="cov8" title="1">{
+        level := slog.LevelInfo
+        isDev := environment == "development" || environment == "dev"
+
+        if isDev </span><span class="cov8" title="1">{
+                level = slog.LevelDebug
+        }</span>
+
+        <span class="cov8" title="1">var handler slog.Handler
+        if isDev </span><span class="cov8" title="1">{
+                // Formato legible para humanos en tu Debian local
+                handler = slog.NewTextHandler(os.Stdout, &amp;slog.HandlerOptions{Level: level})
+        }</span> else<span class="cov0" title="0"> {
+                // Formato JSON estructurado para que Victoria Metrics indexe tus facturas en producción
+                handler = slog.NewJSONHandler(os.Stdout, &amp;slog.HandlerOptions{Level: level})
+        }</span>
+
+        <span class="cov8" title="1">log = slog.New(handler)
+        slog.SetDefault(log)</span>
+}
+
+func Default() *slog.Logger <span class="cov0" title="0">{
+        if log != nil </span><span class="cov0" title="0">{
+                return log
+        }</span>
+
+        <span class="cov0" title="0">Init("production")
+        return log</span>
+}
+
+func Info(message string, args ...any) <span class="cov8" title="1">{
+        if log != nil </span><span class="cov8" title="1">{
+                log.Info(message, args...)
+        }</span>
+}
+
+func Error(message string, args ...any) <span class="cov8" title="1">{
+        if log != nil </span><span class="cov8" title="1">{
+                log.Error(message, args...)
+        }</span>
+}
+
+func Warn(message string, args ...any) <span class="cov0" title="0">{
+        if log != nil </span><span class="cov0" title="0">{
+                log.Warn(message, args...)
+        }</span>
+}
+
+func Debug(message string, args ...any) <span class="cov0" title="0">{
+        if log != nil </span><span class="cov0" title="0">{
+                log.Debug(message, args...)
+        }</span>
+}
+
+func Fatal(message string) <span class="cov0" title="0">{
+        if log != nil </span><span class="cov0" title="0">{
+                log.Error(message)
+        }</span>
+        <span class="cov0" title="0">os.Exit(1)</span>
+}
+</pre>
+		
+		<pre class="file" id="file23" style="display: none">package mongodb
+
+import (
+        "context"
+        "sync"
+        "time"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/config"
+
+        "go.mongodb.org/mongo-driver/v2/mongo"
+        "go.mongodb.org/mongo-driver/v2/mongo/options"
+)
+
+type Mongo struct {
+        client   *mongo.Client
+        database *mongo.Database
+}
+
+var (
+        instance *Mongo
+        once     sync.Once
+)
+
+func Init(cfg *config.Config) error <span class="cov8" title="1">{
+
+        var err error
+
+        once.Do(func() </span><span class="cov8" title="1">{
+
+                ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+                defer cancel()
+
+                client, e := mongo.Connect(
+                        options.Client().ApplyURI(cfg.MongoURI),
+                )
+
+                if e != nil </span><span class="cov0" title="0">{
+                        err = e
+                        return
+                }</span>
+
+                <span class="cov8" title="1">if e = client.Ping(ctx, nil); e != nil </span><span class="cov0" title="0">{
+                        err = e
+                        return
+                }</span>
+
+                <span class="cov8" title="1">instance = &amp;Mongo{
+                        client:   client,
+                        database: client.Database(cfg.MongoDatabase),
+                }</span>
+        })
+
+        <span class="cov8" title="1">return err</span>
+}
+
+func Close() <span class="cov0" title="0">{
+
+        if instance == nil </span><span class="cov0" title="0">{
+                return
+        }</span>
+
+        <span class="cov0" title="0">ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+        defer cancel()
+
+        _ = instance.client.Disconnect(ctx)</span>
+}
+
+func Client() *mongo.Client <span class="cov0" title="0">{
+        if instance == nil </span><span class="cov0" title="0">{
+                return nil
+        }</span>
+
+        <span class="cov0" title="0">return instance.client</span>
+}
+
+func Database() *mongo.Database <span class="cov0" title="0">{
+        if instance == nil </span><span class="cov0" title="0">{
+                return nil
+        }</span>
+
+        <span class="cov0" title="0">return instance.database</span>
+}
+
+func Collection(name string) *mongo.Collection <span class="cov8" title="1">{
+        if instance == nil || instance.database == nil </span><span class="cov0" title="0">{
+                return nil
+        }</span>
+
+        <span class="cov8" title="1">return instance.database.Collection(name)</span>
+}
+</pre>
+		
+		<pre class="file" id="file24" style="display: none">package pulsar
+
+import (
+        "fmt"
+        "sync"
+
+        pulsarclient "github.com/apache/pulsar-client-go/pulsar"
+
+        "github.com/SDATA-Colombia/ms-plan/internal/config"
+)
+
+var (
+        client pulsarclient.Client
+        once   sync.Once
+)
+
+// Init inicializa el cliente singleton de Apache Pulsar.
+// Debe ejecutarse una sola vez durante el arranque del microservicio.
+func Init(cfg *config.Config) error <span class="cov8" title="1">{
+
+        var err error
+
+        once.Do(func() </span><span class="cov8" title="1">{
+
+                client, err = pulsarclient.NewClient(
+                        pulsarclient.ClientOptions{
+                                URL: cfg.PulsarURL,
+                        },
+                )
+
+        }</span>)
+
+        <span class="cov8" title="1">if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to initialize Pulsar client: %w", err)
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+
+// Client retorna el cliente singleton de Apache Pulsar.
+func Client() pulsarclient.Client <span class="cov8" title="1">{
+
+        if client == nil </span><span class="cov0" title="0">{
+                panic("pulsar client has not been initialized")</span>
+        }
+
+        <span class="cov8" title="1">return client</span>
+}
+
+// IsConnected indica si el cliente fue inicializado.
+func IsConnected() bool <span class="cov0" title="0">{
+        return client != nil
+}</span>
+</pre>
+		
+		<pre class="file" id="file25" style="display: none">package pulsar
+
+import (
+        "context"
+        "encoding/json"
+        "fmt"
+        "log"
+        "sync"
+
+        "github.com/SDATA-Colombia/ms-plan/pkg/cache"
+
+        pulsarclient "github.com/apache/pulsar-client-go/pulsar"
+)
+
+// Handler representa la función que procesará un mensaje recibido.
+type Handler func(context.Context, []byte) error
+
+var (
+        consumers []pulsarclient.Consumer
+        mutex     sync.RWMutex
+)
+
+// Subscribe crea un Consumer para un tópico y comienza
+// a escuchar mensajes en una goroutine.
+func Subscribe(
+        topic string,
+        subscription string,
+        handler Handler,
+        retryCfg RetryConfig,
+        store IdempotencyStore,
+
+) error <span class="cov0" title="0">{
+
+        if handler == nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("handler cannot be nil")
+        }</span>
+
+        <span class="cov0" title="0">consumer, err := Client().Subscribe(
+                pulsarclient.ConsumerOptions{
+                        Topic:            topic,
+                        SubscriptionName: subscription,
+                        Type:             pulsarclient.Shared,
+                },
+        )
+
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("error creating consumer: %w", err)
+        }</span>
+
+        <span class="cov0" title="0">mutex.Lock()
+        consumers = append(consumers, consumer)
+        mutex.Unlock()
+
+        go consume(consumer, topic, handler, retryCfg, store)
+
+        return nil</span>
+}
+
+// Consumers retorna todos los consumers registrados.
+func Consumers() []pulsarclient.Consumer <span class="cov0" title="0">{
+
+        mutex.RLock()
+        defer mutex.RUnlock()
+
+        result := make([]pulsarclient.Consumer, len(consumers))
+        copy(result, consumers)
+
+        return result
+}</span>
+
+// consume mantiene un loop infinito procesando mensajes.
+func consume(
+        consumer pulsarclient.Consumer,
+        topic string,
+        handler Handler,
+        retryCfg RetryConfig,
+        store IdempotencyStore,
+) <span class="cov0" title="0">{
+
+        ctx := context.Background()
+
+        for </span><span class="cov0" title="0">{
+
+                msg, err := consumer.Receive(ctx)
+                // if err != nil {
+                //         return
+                // }
+
+                if err != nil </span><span class="cov0" title="0">{
+                        log.Printf("pulsar: receive failed for topic %q: %v", topic, err)
+                        return
+                }</span>
+
+                //------------------------------------------------------------
+                // Deserializar el evento para obtener el Event.ID
+                //------------------------------------------------------------
+
+                <span class="cov0" title="0">var event Event
+
+                // if err := json.Unmarshal(msg.Payload(), &amp;event); err != nil {
+                //         _ = SendToDLQ(ctx, topic, msg.Payload(), err)
+                //         consumer.Ack(msg)
+                //         continue
+                // }
+
+                if err := json.Unmarshal(msg.Payload(), &amp;event); err != nil </span><span class="cov0" title="0">{
+                        if dlqErr := SendToDLQ(ctx, topic, msg.Payload(), err); dlqErr != nil </span><span class="cov0" title="0">{
+                                log.Printf("pulsar: DLQ publish failed for topic %q: %v", topic, dlqErr)
+                                consumer.Nack(msg)
+                                continue</span>
+                        }
+
+                        <span class="cov0" title="0">ackOrRequeue(consumer, msg, topic)
+                        continue</span>
+                }
+
+                //------------------------------------------------------------
+                // 1. Idempotencia usando Event.ID
+                //------------------------------------------------------------
+
+                <span class="cov0" title="0">if store != nil </span><span class="cov0" title="0">{
+
+                        processed, err := store.IsProcessed(ctx, event.ID)
+
+                        // if err == nil &amp;&amp; processed {
+                        //         consumer.Ack(msg)
+                        //         continue
+                        // }
+
+                        if err != nil </span><span class="cov0" title="0">{
+                                log.Printf("pulsar: idempotency check failed for topic %q: %v", topic, err)
+                                consumer.Nack(msg)
+                                continue</span>
+                        }
+
+                        <span class="cov0" title="0">if processed </span><span class="cov0" title="0">{
+                                ackOrRequeue(consumer, msg, topic)
+                                continue</span>
+                        }
+                }
+
+                //------------------------------------------------------------
+                // 2. Retry
+                //------------------------------------------------------------
+
+                <span class="cov0" title="0">err = ExecuteWithRetry(ctx, retryCfg, handler, msg.Payload())
+
+                if err != nil </span><span class="cov0" title="0">{
+
+                        //--------------------------------------------------------
+                        // 3. DLQ
+                        //--------------------------------------------------------
+
+                        // _ = SendToDLQ(ctx, topic, msg.Payload(), err)
+
+                        // consumer.Ack(msg)
+
+                        // continue
+
+                        if dlqErr := SendToDLQ(ctx, topic, msg.Payload(), err); dlqErr != nil </span><span class="cov0" title="0">{
+                                log.Printf("pulsar: DLQ publish failed for topic %q: %v", topic, dlqErr)
+                                consumer.Nack(msg)
+                                continue</span>
+                        }
+
+                        <span class="cov0" title="0">ackOrRequeue(consumer, msg, topic)
+                        continue</span>
+                }
+
+                //------------------------------------------------------------
+                // 4. Marcar como procesado
+                //------------------------------------------------------------
+
+                <span class="cov0" title="0">if store != nil </span><span class="cov0" title="0">{
+                        // _ = store.MarkAsProcessed(ctx, event.ID, cache.TTLDaily)
+
+                        if err := store.MarkAsProcessed(ctx, event.ID, cache.TTLDaily); err != nil </span><span class="cov0" title="0">{
+                                log.Printf("pulsar: marking event %q as processed failed: %v", event.ID, err)
+                                consumer.Nack(msg)
+                                continue</span>
+                        }
+                }
+
+                //------------------------------------------------------------
+                // 5. ACK
+                //------------------------------------------------------------
+
+                // consumer.Ack(msg)
+
+                // Confirmar el mensaje.
+                <span class="cov0" title="0">ackOrRequeue(consumer, msg, topic)</span>
+        }
+}
+
+// ackOrRequeue confirma el mensaje y solicita su reentrega
+// si falla la confirmación.
+func ackOrRequeue(
+        consumer pulsarclient.Consumer,
+        msg pulsarclient.Message,
+        topic string,
+) <span class="cov0" title="0">{
+        if err := consumer.Ack(msg); err != nil </span><span class="cov0" title="0">{
+                log.Printf("pulsar: ACK failed for topic %q: %v", topic, err)
+                consumer.Nack(msg)
+        }</span>
+}
+</pre>
+		
+		<pre class="file" id="file26" style="display: none">package pulsar
+
+import (
+        "context"
+        "fmt"
+        "time"
+)
+
+// Este archivo encapsula la lógica para enviar a la Dead Letter Queue los mensajes que fallaron definitivamente después de agotar los reintentos.
+
+// DLQEnvelope empaqueta el evento original junto a la metadata de seguridad y error.
+type DLQEnvelope struct {
+        OriginalTopic string    `json:"original_topic"`
+        ErrorReason   string    `json:"error_reason"`
+        FailedAt      time.Time `json:"failed_at"`
+        Payload       []byte    `json:"payload"`
+}
+
+// SendToDLQ redirige un payload irrecuperable a la cola de mensajes muertos.
+func SendToDLQ(ctx context.Context, originalTopic string, payload []byte, reason error) error <span class="cov0" title="0">{
+        dlqTopic := fmt.Sprintf("%s.dlq", originalTopic)
+
+        envelope := DLQEnvelope{
+                OriginalTopic: originalTopic,
+                ErrorReason:   reason.Error(),
+                FailedAt:      time.Now().UTC(),
+                Payload:       payload,
+        }
+
+        // Reutilizamos el pool de Producers de producer.go
+        if err := Publish(ctx, dlqTopic, envelope); err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to route message to DLQ topic %s: %w", dlqTopic, err)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file27" style="display: none">package pulsar
+
+import (
+        "time"
+
+        "github.com/google/uuid"
+)
+
+// Event representa un evento publicado en Apache Pulsar.
+// Es la estructura base utilizada por todos los microservicios.
+type Event struct {
+        ID            string    `json:"id"`
+        Type          string    `json:"type"`
+        Source        string    `json:"source"`
+        Version       string    `json:"version"`
+        OccurredAt    time.Time `json:"occurred_at"`
+        CorrelationID string    `json:"correlation_id,omitempty"`
+        UserID        string    `json:"user_id,omitempty"`
+        TenantID      string    `json:"tenant_id,omitempty"`
+        Payload       any       `json:"payload"`
+}
+
+// NewEvent crea un nuevo evento con valores por defecto.
+func NewEvent(
+        eventType string,
+        source string,
+        payload any,
+
+) Event <span class="cov8" title="1">{
+
+        if payload == nil </span><span class="cov0" title="0">{
+                payload = struct{}{}
+        }</span>
+
+        <span class="cov8" title="1">return Event{
+                ID:         uuid.NewString(),
+                Type:       eventType,
+                Source:     source,
+                Version:    "1.0.0",
+                OccurredAt: time.Now().UTC(),
+                Payload:    payload,
+        }</span>
+}
+
+// WithCorrelation establece el Correlation ID.
+func (e *Event) WithCorrelation(correlationID string) <span class="cov8" title="1">{
+        e.CorrelationID = correlationID
+}</span>
+
+// WithUser establece el usuario que originó el evento.
+func (e *Event) WithUser(userID string) <span class="cov0" title="0">{
+        e.UserID = userID
+}</span>
+
+// WithTenant establece el Tenant del evento.
+func (e *Event) WithTenant(tenantID string) <span class="cov0" title="0">{
+        e.TenantID = tenantID
+}</span>
+</pre>
+		
+		<pre class="file" id="file28" style="display: none">package pulsar
+
+import (
+        "context"
+        "time"
+
+        "github.com/SDATA-Colombia/ms-plan/pkg/cache"
+)
+
+// HandlerIdempotent es un wrapper que asegura que un Handler se ejecute solo una vez por mensaje.
+// Asegurando que los eventos no se procesen dos veces si Pulsar entrega un duplicado.
+
+// IdempotencyStore define la interfaz necesaria para validar el procesamiento único.
+type IdempotencyStore interface {
+        IsProcessed(ctx context.Context, messageID string) (bool, error)
+        MarkAsProcessed(ctx context.Context, messageID string, ttl time.Duration) error
+}
+
+// DragonflyIdempotencyStore implementación distribuida usando tu paquete cache.
+type DragonflyIdempotencyStore struct {
+        serviceName string
+}
+
+// NewDragonflyIdempotencyStore crea un nuevo store acoplado a Dragonfly.
+func NewDragonflyIdempotencyStore(serviceName string) *DragonflyIdempotencyStore <span class="cov0" title="0">{
+        return &amp;DragonflyIdempotencyStore{
+                serviceName: serviceName,
+        }
+}</span>
+
+// IsProcessed verifica en Dragonfly si el ID del mensaje ya existe.
+func (d *DragonflyIdempotencyStore) IsProcessed(ctx context.Context, messageID string) (bool, error) <span class="cov0" title="0">{
+        // Genera una llave unificada, ej: idempotency:sdata-ms-base:12345-67890
+        key := cache.Key("idempotency", d.serviceName, messageID)
+
+        return cache.Exists(ctx, key)
+}</span>
+
+// MarkAsProcessed guarda el ID en Dragonfly con un TTL definido (ej. 24h).
+func (d *DragonflyIdempotencyStore) MarkAsProcessed(ctx context.Context, messageID string, ttl time.Duration) error <span class="cov0" title="0">{
+        key := cache.Key("idempotency", d.serviceName, messageID)
+
+        // Guardamos un valor simple (true) para indicar que fue procesado con éxito.
+        return cache.Set(ctx, key, true, ttl)
+}</span>
+</pre>
+		
+		<pre class="file" id="file29" style="display: none">package pulsar
+
+import (
+        "context"
+        "encoding/json"
+        "fmt"
+        "sync"
+        "time"
+
+        pulsarclient "github.com/apache/pulsar-client-go/pulsar"
+)
+
+var (
+        producers     = make(map[string]pulsarclient.Producer)
+        producerMutex sync.RWMutex
+)
+
+// Producer retorna (o crea) un Producer para un tópico.
+// Cada tópico mantiene un único Producer reutilizable.
+func Producer(topic string) (pulsarclient.Producer, error) <span class="cov8" title="1">{
+
+        // Buscar si ya existe.
+        producerMutex.RLock()
+
+        producer, ok := producers[topic]
+
+        producerMutex.RUnlock()
+
+        if ok </span><span class="cov8" title="1">{
+                return producer, nil
+        }</span>
+
+        // Crear uno nuevo.
+        <span class="cov8" title="1">producerMutex.Lock()
+        defer producerMutex.Unlock()
+
+        // Doble verificación por concurrencia.
+        if producer, ok := producers[topic]; ok </span><span class="cov0" title="0">{
+                return producer, nil
+        }</span>
+
+        <span class="cov8" title="1">var err error
+
+        producer, err = Client().CreateProducer(
+                pulsarclient.ProducerOptions{
+                        Topic: topic,
+                },
+        )
+
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, fmt.Errorf("failed to create producer: %w", err)
+        }</span>
+
+        <span class="cov8" title="1">producers[topic] = producer
+
+        return producer, nil</span>
+}
+
+// Publish serializa un evento y lo publica en el tópico indicado.
+func Publish(
+        ctx context.Context,
+        topic string,
+        event any,
+
+) error <span class="cov8" title="1">{
+
+        producer, err := Producer(topic)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">data, err := json.Marshal(event)
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to marshal event: %w", err)
+        }</span>
+
+        // Evita que una publicación quede bloqueada indefinidamente.
+        <span class="cov8" title="1">ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
+        defer cancel()
+
+        _, err = producer.Send(
+                ctx,
+                &amp;pulsarclient.ProducerMessage{
+                        Payload: data,
+                },
+        )
+
+        if err != nil </span><span class="cov0" title="0">{
+                return fmt.Errorf("failed to publish event: %w", err)
+        }</span>
+
+        <span class="cov8" title="1">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file30" style="display: none">package pulsar
+
+import (
+        "context"
+        "fmt"
+        "math"
+        "math/rand"
+        "time"
+)
+
+// Este archivo maneja la tolerancia a fallos mediante reintentos con Exponential Backoff y Jitter
+// (variación aleatoria) para no saturar los servicios en caso de caídas intermitentes.
+
+// RetryConfig define la configuración para la estrategia de reintentos.
+type RetryConfig struct {
+        MaxRetries   int           // Número máximo de intentos
+        InitialDelay time.Duration // Tiempo base de espera inicial
+        MaxDelay     time.Duration // Tiempo máximo de espera
+        Factor       float64       // Multiplicador exponencial
+}
+
+// DefaultRetryConfig entrega una configuración robusta por defecto.
+func DefaultRetryConfig() RetryConfig <span class="cov0" title="0">{
+        return RetryConfig{
+                MaxRetries:   3,
+                InitialDelay: 200 * time.Millisecond,
+                MaxDelay:     3 * time.Second,
+                Factor:       2.0,
+        }
+}</span>
+
+// ExecuteWithRetry ejecuta un Handler envolviéndolo en una política de reintentos.
+func ExecuteWithRetry(ctx context.Context, cfg RetryConfig, handler Handler, payload []byte) error <span class="cov0" title="0">{
+        var err error
+
+        for attempt := 0; attempt &lt;= cfg.MaxRetries; attempt++ </span><span class="cov0" title="0">{
+                // Verificar si el contexto fue cancelado desde arriba (ej. shutdown)
+                if err := ctx.Err(); err != nil </span><span class="cov0" title="0">{
+                        return fmt.Errorf("retry canceled by context: %w", err)
+                }</span>
+
+                <span class="cov0" title="0">err = handler(ctx, payload)
+                if err == nil </span><span class="cov0" title="0">{
+                        return nil // Ejecución exitosa, salimos del ciclo
+                }</span>
+
+                // Si es el último intento, no esperamos, simplemente rompemos
+                <span class="cov0" title="0">if attempt == cfg.MaxRetries </span><span class="cov0" title="0">{
+                        break</span>
+                }
+
+                // Cálculo de Exponential Backoff
+                <span class="cov0" title="0">delay := float64(cfg.InitialDelay) * math.Pow(cfg.Factor, float64(attempt))
+                if delay &gt; float64(cfg.MaxDelay) </span><span class="cov0" title="0">{
+                        delay = float64(cfg.MaxDelay)
+                }</span>
+
+                // Agregar Jitter (variación de +/- 20%) para evitar el efecto manada (thundering herd)
+                <span class="cov0" title="0">jitter := (rand.Float64()*0.4 - 0.2) * delay
+                sleepDuration := time.Duration(delay + jitter)
+
+                select </span>{
+                case &lt;-time.After(sleepDuration):<span class="cov0" title="0"></span> // Esperamos antes del próximo reintento
+                case &lt;-ctx.Done():<span class="cov0" title="0">
+                        return ctx.Err()</span>
+                }
+        }
+
+        <span class="cov0" title="0">return fmt.Errorf("exceeded max retries (%d): %w", cfg.MaxRetries, err)</span>
+}
+</pre>
+		
+		<pre class="file" id="file31" style="display: none">package pulsar
+
+import (
+        "sync"
+
+        pulsarclient "github.com/apache/pulsar-client-go/pulsar"
+)
+
+// Close libera todos los recursos utilizados por Apache Pulsar.
+func Close() <span class="cov0" title="0">{
+
+        //---------------------------------------------------
+        // Cerrar Consumers
+        //---------------------------------------------------
+
+        mutex.Lock()
+
+        for _, consumer := range consumers </span><span class="cov0" title="0">{
+
+                if consumer != nil </span><span class="cov0" title="0">{
+                        consumer.Close()
+                }</span>
+        }
+
+        <span class="cov0" title="0">consumers = nil
+
+        mutex.Unlock()
+
+        //---------------------------------------------------
+        // Cerrar Producers
+        //---------------------------------------------------
+
+        producerMutex.Lock()
+
+        for topic, producer := range producers </span><span class="cov0" title="0">{
+
+                if producer != nil </span><span class="cov0" title="0">{
+                        producer.Close()
+                }</span>
+
+                <span class="cov0" title="0">delete(producers, topic)</span>
+        }
+
+        <span class="cov0" title="0">producerMutex.Unlock()
+
+        //---------------------------------------------------
+        // Cerrar Client
+        //---------------------------------------------------
+
+        if client != nil </span><span class="cov0" title="0">{
+                client.Close()
+                client = nil
+        }</span>
+}
+
+// Reset elimina el estado interno.
+// Útil para pruebas unitarias.
+func Reset() <span class="cov0" title="0">{
+
+        mutex.Lock()
+        consumers = nil
+        mutex.Unlock()
+
+        producerMutex.Lock()
+        producers = make(map[string]pulsarclient.Producer)
+        producerMutex.Unlock()
+
+        client = nil
+
+        once = sync.Once{}
+}</span>
+</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>

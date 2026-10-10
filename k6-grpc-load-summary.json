@@ -1,0 +1,213 @@
+{
+    "metrics": {
+        "rpc_create_ms": {
+            "avg": 22.329742208541745,
+            "min": 3,
+            "med": 14,
+            "max": 169,
+            "p(90)": 47,
+            "p(95)": 54
+        },
+        "rpc_delete_ms": {
+            "p(90)": 46,
+            "p(95)": 51,
+            "avg": 21.43516737206618,
+            "min": 3,
+            "med": 12,
+            "max": 95
+        },
+        "data_sent": {
+            "count": 2039841,
+            "rate": 19386.587228437253
+        },
+        "data_received": {
+            "count": 7486853,
+            "rate": 71154.82469025141
+        },
+        "iterations": {
+            "count": 2599,
+            "rate": 24.700817468963717
+        },
+        "grpc_req_duration": {
+            "avg": 18.07485889515195,
+            "min": 0.782346,
+            "med": 10.8255125,
+            "max": 154.402886,
+            "p(90)": 42.80589340000001,
+            "p(95)": 48.661055399999974,
+            "thresholds": {
+                "p(95)<300": false,
+                "p(99)<800": false
+            }
+        },
+        "rpc_get_ms": {
+            "max": 89,
+            "p(90)": 37,
+            "p(95)": 41,
+            "avg": 13.212004617160446,
+            "min": 1,
+            "med": 7
+        },
+        "checks": {
+            "passes": 23391,
+            "fails": 0,
+            "thresholds": {
+                "rate>0.99": false
+            },
+            "value": 1
+        },
+        "cleanup_failures": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count==0": false
+            }
+        },
+        "iteration_duration": {
+            "med": 311.615787,
+            "max": 576.704252,
+            "p(90)": 386.08627020000006,
+            "p(95)": 397.21956220000004,
+            "avg": 314.9763316383218,
+            "min": 216.679096
+        },
+        "vus_max": {
+            "value": 10,
+            "min": 10,
+            "max": 10
+        },
+        "vus": {
+            "value": 1,
+            "min": 0,
+            "max": 10
+        },
+        "rpc_update_ms": {
+            "med": 14,
+            "max": 90,
+            "p(90)": 47,
+            "p(95)": 51,
+            "avg": 22.71219699884571,
+            "min": 3
+        },
+        "group_duration": {
+            "p(95)": 57.366914,
+            "avg": 25.221294939111228,
+            "min": 2.790854,
+            "med": 16.790855999999998,
+            "max": 169.573181,
+            "p(90)": 50.0828775
+        },
+        "rpc_list_ms": {
+            "p(90)": 45,
+            "p(95)": 52,
+            "avg": 20.160061562139283,
+            "min": 2,
+            "med": 13,
+            "max": 98
+        }
+    },
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+            "create": {
+                "path": "::create",
+                "id": "f17218b168d4f800a2723a9dc7150947",
+                "groups": {},
+                "checks": {
+                        "create: status OK": {
+                            "path": "::create::create: status OK",
+                            "id": "90a3790477ac3d7b254914bae0e61927",
+                            "passes": 2599,
+                            "fails": 0,
+                            "name": "create: status OK"
+                        },
+                        "create: devuelve id": {
+                            "name": "create: devuelve id",
+                            "path": "::create::create: devuelve id",
+                            "id": "e4378c9dbffb03c39604b1fba1a260e9",
+                            "passes": 2599,
+                            "fails": 0
+                        }
+                    },
+                "name": "create"
+            },
+            "read": {
+                "checks": {
+                    "get: status OK": {
+                        "name": "get: status OK",
+                        "path": "::read::get: status OK",
+                        "id": "32944a6e0ddcd4f4c14887580ef11389",
+                        "passes": 2599,
+                        "fails": 0
+                    },
+                    "get: mismo titulo": {
+                        "name": "get: mismo titulo",
+                        "path": "::read::get: mismo titulo",
+                        "id": "200f2044b586d8b7abf26f0b1cf894b2",
+                        "passes": 2599,
+                        "fails": 0
+                    },
+                    "list: status OK": {
+                        "fails": 0,
+                        "name": "list: status OK",
+                        "path": "::read::list: status OK",
+                        "id": "35949f48d8328433f046b4429adbb55f",
+                        "passes": 2599
+                    }
+                },
+                "name": "read",
+                "path": "::read",
+                "id": "d1106446f368c9978534af4524a1a48a",
+                "groups": {}
+            },
+            "update": {
+                "name": "update",
+                "path": "::update",
+                "id": "9602c3bce14e25af1fd81df36ae6b87d",
+                "groups": {},
+                "checks": {
+                        "update: status OK": {
+                            "path": "::update::update: status OK",
+                            "id": "bfee247989f87e7a666246da801dbac4",
+                            "passes": 2599,
+                            "fails": 0,
+                            "name": "update: status OK"
+                        },
+                        "update: precio nuevo": {
+                            "name": "update: precio nuevo",
+                            "path": "::update::update: precio nuevo",
+                            "id": "21bde66f1682384158d9b64dac9835a3",
+                            "passes": 2599,
+                            "fails": 0
+                        }
+                    }
+            },
+            "delete": {
+                "name": "delete",
+                "path": "::delete",
+                "id": "0d34f2e6a60ea8ab97c243c51a5bf595",
+                "groups": {},
+                "checks": {
+                        "delete: status OK": {
+                            "passes": 2599,
+                            "fails": 0,
+                            "name": "delete: status OK",
+                            "path": "::delete::delete: status OK",
+                            "id": "93e9b31bd3af5926a90a02d20c307fdc"
+                        }
+                    }
+            }
+        },
+        "checks": {
+            "get inexistente: NotFound": {
+                "passes": 2599,
+                "fails": 0,
+                "name": "get inexistente: NotFound",
+                "path": "::get inexistente: NotFound",
+                "id": "ed89e294cb6ee210a94858d788f8ca18"
+            }
+        }
+    }
+}

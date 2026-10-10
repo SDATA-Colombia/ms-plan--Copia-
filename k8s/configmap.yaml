@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ms-plan-config
+  namespace: sdata
+
+data:
+  GRPC_PORT: "50051"
+  APP_ENV: "production"
+  MONGO_URI: "mongodb://mongodb-service:27017"
+  MONGO_DATABASE: "plans"
+  DRAGONFLY_ADDR: "dragonfly-service:6379"
+  PULSAR_URL: "pulsar://pulsar-proxy:6650"

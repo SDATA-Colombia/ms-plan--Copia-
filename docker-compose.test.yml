@@ -1,0 +1,26 @@
+# Infraestructura local desechable para las pruebas de integracion de ms-plan.
+# Uso: docker compose -f docker-compose.test.yml up -d
+# Apunte las variables de entorno de internal/config a estos puertos (base de datos de PRUEBAS).
+services:
+  mongodb:
+    image: mongo:7
+    ports: ["27017:27017"]
+    tmpfs: ["/data/db"]
+
+  dragonfly:
+    image: docker.dragonflydb.io/dragonflydb/dragonfly:latest
+    ports: ["6379:6379"]
+    ulimits:
+      memlock: -1
+
+  pulsar:
+    image: apachepulsar/pulsar:3.3.1
+    command: bin/pulsar standalone
+    ports: ["6650:6650", "8080:8080"]
+
+  sonarqube:
+    image: sonarqube:community
+    profiles: ["sonar"]
+    ports: ["9000:9000"]
+    environment:
+      SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: "true"
